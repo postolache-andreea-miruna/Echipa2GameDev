@@ -5560,7 +5560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Line: {fileID: 249029288}
   EndWire: {fileID: 26737266}
-  SelectSound: {fileID: 8300000, guid: b8dac7df95bdf5b4b8afcfa9e96fb22b, type: 3}
+  SelectSound: {fileID: 8300000, guid: b36de79f8311a724eb6029e679e4d298, type: 3}
   ConnectSound: {fileID: 8300000, guid: 60441c327e82ddc42bb1262b6439d008, type: 3}
   ErrorSound: {fileID: 8300000, guid: 36978a980b5ebec47adb61b5d4936649, type: 3}
 --- !u!212 &1485651923
