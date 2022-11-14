@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/_scenes/MainGame.unity
     guid: f2c4113e470ab6b41ba57a8a0d57d90c
   - enabled: 1
+    path: Assets/_scenes/LabirintIntro.unity
+    guid: dcac7bbc7afbae747b4800faa2f77444
+  - enabled: 1
     path: Assets/_scenes/LabirintMeniu.unity
     guid: f0ec671596c83d34b9bf6dc6cf880bb1
   - enabled: 1
