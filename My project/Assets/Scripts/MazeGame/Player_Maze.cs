@@ -8,6 +8,9 @@ public class Player_Maze : MonoBehaviour
 {
     public float speed = 2;
     private float Points = 0f;
+
+    private string messageOutMaze = "";
+
     // Start is called before the first frame update
     void Start()
     {
@@ -45,5 +48,34 @@ public class Player_Maze : MonoBehaviour
                 transform.position.z);
                 Points += speed*Time.deltaTime;
         }
+        
+        //try to make a logic with interval points/stars
+        if (((int)Points >= 45 && (int)Points < 54) || (int)Points <= 45){
+            //Debug.Log((int)Points);
+            messageOutMaze = "3 stele";
+           // Debug.Log("3 stele");
+        }
+
+       else if ((int)Points >= 54 && (int)Points < 60) {
+            //Debug.Log((int)Points);
+            //Debug.Log("2 stele");
+            messageOutMaze = "2 stele";
+        }
+
+        else if ((int)Points >= 60 && (int)Points < 65){
+          //  Debug.Log((int)Points);
+           // Debug.Log("1 stea");
+            messageOutMaze = "1 stea";
+        }
+        else if ((int)Points >= 65){
+           // Debug.Log((int)Points);
+            //Debug.Log("tb sa reiei jocul daca nu ai capsune suficiente");
+            int coinMustHave = (int)Points - 65;
+            //Debug.Log(coinMustHave);
+
+            messageOutMaze = "tb sa reiei jocul daca nu ai capsune suficiente"+coinMustHave;
+        }
+        Debug.Log(messageOutMaze);
     }
+
 }
