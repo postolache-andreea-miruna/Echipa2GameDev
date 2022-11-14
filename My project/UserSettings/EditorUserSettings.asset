@@ -1,21 +1,7 @@
-%YAML 1.1
-%TAG !u! tag:unity3d.com,2011:
---- !u!162 &1
-EditorUserSettings:
-  m_ObjectHideFlags: 0
-  serializedVersion: 4
-  m_ConfigSettings:
-    RecentlyUsedSceneGuid-0:
-      value: 5b520d0503545b0d0c0c0a2715770748154f4d2c7d7d7e627a7d4a35b4e1646a
+
       flags: 0
-    RecentlyUsedSceneGuid-1:
-      value: 050151055302580e54580f7a43270c44144e1a2c7a2c25662e2f456bb2e23669
-      flags: 0
-    RecentlyUsedSceneGuid-2:
-      value: 0503575254045a5e59595c2312755d444715197f7b297e317d2d4864e6b9643b
-      flags: 0
-    RecentlyUsedSceneGuid-3:
-      value: 0752550552570b585a0f0a201126084441154c727c7820312c7b1b64b5b4606c
+    RecentlyUsedSceneGuid-5:
+      value: 0506010457065a0d540f5d7611765c44134f412c7d7a7e60787e1935b3e66739
       flags: 0
     vcSharedLogLevel:
       value: 0d5e400f0650
