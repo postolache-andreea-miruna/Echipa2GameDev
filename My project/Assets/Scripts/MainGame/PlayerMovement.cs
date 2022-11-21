@@ -12,12 +12,21 @@ public class PlayerMovement : MonoBehaviour
     private LayerMask jumpGround;
     private float directionX = 0f;
     [SerializeField]
-    private float moveSpeed = 7f;
+    private float moveSpeed = 14f;
     [SerializeField]
     private float jumpHigh = 7f;
 
     private enum PlayerMove {initial, run, jump, fall}
-    
+
+
+    //new
+    PlayerPosSaved playerPosData;
+    private void Awake()
+    {
+        playerPosData = FindObjectOfType<PlayerPosSaved>();
+        playerPosData.PlayerPositionLoad();
+    }
+
     private void Start()
     {
         _rigidBody = GetComponent<Rigidbody2D>();
@@ -77,5 +86,32 @@ public class PlayerMovement : MonoBehaviour
     {
         return Physics2D.BoxCast(_collider.bounds.center, _collider.bounds.size, 0f, Vector2.down, .1f, jumpGround);
     }
-    
+
+    public void OnCollisionEnter2D(Collision2D collision)
+    {
+        playerPosData = FindObjectOfType<PlayerPosSaved>();
+        
+        if (collision.gameObject.tag == "MazeTransitionTag")
+        {
+            
+            playerPosData.PlayerPositionSave();
+            MazeGameBeh.Instance.sceneToMoveTo();
+        }
+
+        if (collision.gameObject.tag == "BridgeTransitionTag")
+        {
+            BridgeGameBeh.Instance.sceneToMoveTo();
+        }
+
+        if (collision.gameObject.tag == "FishTransitionTag")
+        {
+            FishGameBeh.Instance.sceneToMoveTo();
+        }
+
+        if (collision.gameObject.tag == "RiverTransitionTag")
+        {
+            RiverGameBeh.Instance.sceneToMoveTo();
+        }
+    }
+
 }
