@@ -63,3 +63,16 @@ Update Mode: updateDependencies
 
 The following packages were updated:
   com.unity.render-pipelines.universal from version 12.1.7 to 13.1.8
+
+=== Wed Nov 23 22:40:50 2022
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were added:
+  com.unity.ai.navigation@1.1.1
+The following packages were updated:
+  com.unity.collab-proxy from version 1.17.2 to 1.17.6
+  com.unity.ide.rider from version 3.0.15 to 3.0.16
+  com.unity.render-pipelines.universal from version 13.1.8 to 15.0.1
+  com.unity.timeline from version 1.7.1 to 1.7.2
