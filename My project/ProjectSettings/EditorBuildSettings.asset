@@ -6,51 +6,54 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/_scenes/FindinMitiIntroGame.unity
+    path: Assets/_scenes/IntroAndMainMenu/FindinMitiIntroGame.unity
     guid: 74df548c193d5cc42893b11e41b81f67
   - enabled: 1
-    path: Assets/_scenes/KidnappingMiti.unity
+    path: Assets/_scenes/IntroAndMainMenu/KidnappingMiti.unity
     guid: 2e592dcf76a9cbe48bd9215a136e0320
   - enabled: 1
-    path: Assets/_scenes/MainMenu.unity
+    path: Assets/_scenes/IntroAndMainMenu/PlayerToHelpMenu.unity
+    guid: 10501e040112dd74dad886fcbaf37c32
+  - enabled: 1
+    path: Assets/_scenes/IntroAndMainMenu/MainMenu.unity
     guid: e5723937fffce204bac82620d78d158b
   - enabled: 1
-    path: Assets/_scenes/MainGame.unity
+    path: Assets/_scenes/GameMain/MainGame.unity
     guid: f2c4113e470ab6b41ba57a8a0d57d90c
   - enabled: 1
-    path: Assets/_scenes/BridgeIntro.unity
+    path: Assets/_scenes/GameBridge/BridgeIntro.unity
     guid: ff954c8858ebc0549afb240fa8ae5992
   - enabled: 1
-    path: Assets/_scenes/BridgeMeniu.unity
+    path: Assets/_scenes/GameBridge/BridgeMeniu.unity
     guid: df09c32827c4ddc428d2a6c8280dda31
   - enabled: 1
-    path: Assets/_scenes/PuzzleFire.unity
+    path: Assets/_scenes/GameBridge/PuzzleFire.unity
     guid: ccf2267dc8dcde94e936931176737dfa
   - enabled: 1
-    path: Assets/_scenes/FishIntro.unity
+    path: Assets/_scenes/GameFishing/FishIntro.unity
     guid: 4a7a1344e9289f342bf30013333ec967
   - enabled: 1
-    path: Assets/_scenes/FishingMeniu.unity
+    path: Assets/_scenes/GameFishing/FishingMeniu.unity
     guid: c22c0ba8481fe8b47bcd0e9227ba25a4
   - enabled: 1
-    path: Assets/_scenes/Fishing.unity
+    path: Assets/_scenes/GameFishing/Fishing.unity
     guid: 5061a92c0c833bb4bbaa0409d7bcec2d
   - enabled: 1
-    path: Assets/_scenes/RiverIntro.unity
+    path: Assets/_scenes/GameRiver/RiverIntro.unity
     guid: 27f77fd167502bb4e9072ac10bfcf486
   - enabled: 1
-    path: Assets/_scenes/RiverMeniu.unity
+    path: Assets/_scenes/GameRiver/RiverMeniu.unity
     guid: 2bf9df4fa245951498362c08b9eb4a31
   - enabled: 1
-    path: Assets/_scenes/BoatGame.unity
+    path: Assets/_scenes/GameRiver/BoatGame.unity
     guid: f75b23369a14a5c4e89f128057df1f3a
   - enabled: 1
-    path: Assets/_scenes/LabirintIntro.unity
+    path: Assets/_scenes/GameMaze/LabirintIntro.unity
     guid: 2192b0c7a0355e24b8849fc985163ece
   - enabled: 1
-    path: Assets/_scenes/LabirintMeniu.unity
+    path: Assets/_scenes/GameMaze/LabirintMeniu.unity
     guid: f0ec671596c83d34b9bf6dc6cf880bb1
   - enabled: 1
-    path: Assets/_scenes/SampleScene.unity
+    path: Assets/_scenes/GameMaze/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   m_configObjects: {}
