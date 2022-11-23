@@ -12,6 +12,7 @@ public class MainMenuButtons : MonoBehaviour
         PlayerPrefs.DeleteKey("LoadTime");
         PlayerPrefs.DeleteKey("Saved");
         PlayerPrefs.DeleteKey("Coins");
+        PlayerPrefs.DeleteKey("Time");
         SceneManager.LoadScene("MainGame");
     }
 
