@@ -3,12 +3,20 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Ground
+  - MazeTransitionTag
+  - RiverTransitionTag
+  - FishTransitionTag
+  - BridgeTransitionTag
+  - MitiTransitionTag
+  - Platforma
+  - Strawberry
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 
