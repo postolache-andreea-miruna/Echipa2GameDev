@@ -6,6 +6,15 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/_scenes/FindinMitiIntroGame.unity
+    guid: 74df548c193d5cc42893b11e41b81f67
+  - enabled: 1
+    path: Assets/_scenes/KidnappingMiti.unity
+    guid: 2e592dcf76a9cbe48bd9215a136e0320
+  - enabled: 1
+    path: Assets/_scenes/MainMenu.unity
+    guid: e5723937fffce204bac82620d78d158b
+  - enabled: 1
     path: Assets/_scenes/MainGame.unity
     guid: f2c4113e470ab6b41ba57a8a0d57d90c
   - enabled: 1

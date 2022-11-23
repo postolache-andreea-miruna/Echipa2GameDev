@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -18,9 +19,14 @@ public class PlayerMovement : MonoBehaviour
 
     private enum PlayerMove {initial, run, jump, fall}
 
-
+    //neww
+    [SerializeField]
+    private GameObject[] limits;
+    private int limit1 = 0;
+    private int limit2 = 1;
     //new
     PlayerPosSaved playerPosData;
+    PlayerPosSaved playerPosData2;
     private void Awake()
     {
         playerPosData = FindObjectOfType<PlayerPosSaved>();
@@ -29,6 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
+        playerPosData2 = FindObjectOfType<PlayerPosSaved>();
         _rigidBody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
         _collider = GetComponent<BoxCollider2D>();
@@ -53,33 +60,33 @@ public class PlayerMovement : MonoBehaviour
     private void UpdateAnimation()
     {
         PlayerMove _move;
-     
-        if (directionX < 0f) //la stanga
-        {
-            _spriteRenderer.flipX = true;
+        
+            if (directionX < 0f) //la stanga
+            {
+                _spriteRenderer.flipX = true;
 
-            _move = PlayerMove.run;
-        }
-        else if (directionX > 0f) //dreapta
-        {
-            _spriteRenderer.flipX = false;
+                _move = PlayerMove.run;
+            }
+            else if (directionX > 0f) //dreapta
+            {
+                _spriteRenderer.flipX = false;
 
-            _move = PlayerMove.run;
-        }
-        else
-        {
-            _move = PlayerMove.initial;
-        }
+                _move = PlayerMove.run;
+            }
+            else
+            {
+                _move = PlayerMove.initial;
+            }
 
-        if (_rigidBody.velocity.y < -.1f)
-        {
-            _move = PlayerMove.fall;
-        }
-        else if(_rigidBody.velocity.y > .1f)
-        {
-            _move = PlayerMove.jump;
-        }
-        _animator.SetInteger("_move", (int)_move); //transform enum into int
+            if (_rigidBody.velocity.y < -.1f)
+            {
+                _move = PlayerMove.fall;
+            }
+            else if (_rigidBody.velocity.y > .1f)
+            {
+                _move = PlayerMove.jump;
+            }
+            _animator.SetInteger("_move", (int)_move); //transform enum into int
     }
 
     private bool IsGrounded() // jump just when we are on the terrain not in air
@@ -89,28 +96,36 @@ public class PlayerMovement : MonoBehaviour
 
     public void OnCollisionEnter2D(Collision2D collision)
     {
-        playerPosData = FindObjectOfType<PlayerPosSaved>();
         
         if (collision.gameObject.tag == "MazeTransitionTag")
         {
-            
-            playerPosData.PlayerPositionSave();
+
+            playerPosData2.PlayerPositionSave();
             MazeGameBeh.Instance.sceneToMoveTo();
         }
 
         if (collision.gameObject.tag == "BridgeTransitionTag")
         {
+            playerPosData2.PlayerPositionSave();
             BridgeGameBeh.Instance.sceneToMoveTo();
+            
         }
 
         if (collision.gameObject.tag == "FishTransitionTag")
         {
+            playerPosData2.PlayerPositionSave();
             FishGameBeh.Instance.sceneToMoveTo();
         }
 
         if (collision.gameObject.tag == "RiverTransitionTag")
         {
+            playerPosData2.PlayerPositionSave();
             RiverGameBeh.Instance.sceneToMoveTo();
+        }
+        if (collision.gameObject.tag == "MitiTransitionTag")
+        {
+
+            SceneManager.LoadScene("MainMenu");
         }
     }
 

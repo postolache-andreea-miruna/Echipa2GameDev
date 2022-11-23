@@ -13,24 +13,20 @@ public class PlayerPosSaved : MonoBehaviour
         {
             float posX = player.transform.position.x;
             float posY = player.transform.position.y;
-            //float posZ = player.transform.position.z;
-
             posX = PlayerPrefs.GetFloat("pos_x");
             posY = PlayerPrefs.GetFloat("pos_y");
-            //posZ = PlayerPrefs.GetFloat("pos_z");
 
-            player.transform.position = new Vector3(posX,posY);
-            PlayerPrefs.SetInt("LoadTime" ,0);
+            player.transform.position = new Vector2(posX,posY);
+            PlayerPrefs.SetInt("LoadTime",0);
             PlayerPrefs.Save();
         }
         
     }
 
-    public void PlayerPositionSave()
+    public void PlayerPositionSave() //saving player position
     {
-        PlayerPrefs.SetFloat("pos_x", player.transform.position.x);
+        PlayerPrefs.SetFloat("pos_x", player.transform.position.x+4.0f);
         PlayerPrefs.SetFloat("pos_y", player.transform.position.y);
-        PlayerPrefs.SetFloat("pos_z", player.transform.position.z);
         PlayerPrefs.SetInt("Saved", 1);
         PlayerPrefs.Save();
     }
