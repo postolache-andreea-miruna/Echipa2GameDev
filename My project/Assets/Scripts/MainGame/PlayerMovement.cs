@@ -104,25 +104,25 @@ public class PlayerMovement : MonoBehaviour
             MazeGameBeh.Instance.sceneToMoveTo();
         }
 
-        if (collision.gameObject.tag == "BridgeTransitionTag")
+        else if (collision.gameObject.tag == "BridgeTransitionTag")
         {
             playerPosData2.PlayerPositionSave();
             BridgeGameBeh.Instance.sceneToMoveTo();
             
         }
 
-        if (collision.gameObject.tag == "FishTransitionTag")
+        else if (collision.gameObject.tag == "FishTransitionTag")
         {
             playerPosData2.PlayerPositionSave();
             FishGameBeh.Instance.sceneToMoveTo();
         }
 
-        if (collision.gameObject.tag == "RiverTransitionTag")
+        else if (collision.gameObject.tag == "RiverTransitionTag")
         {
             playerPosData2.PlayerPositionSave();
             RiverGameBeh.Instance.sceneToMoveTo();
         }
-        if (collision.gameObject.tag == "MitiTransitionTag")
+        else if (collision.gameObject.tag == "MitiTransitionTag")
         {
 
             SceneManager.LoadScene("MainMenu");

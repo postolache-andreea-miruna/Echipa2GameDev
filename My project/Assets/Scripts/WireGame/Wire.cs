@@ -22,14 +22,14 @@ public class Wire : MonoBehaviour
     void Update()
     {
         if (Dragging)
-        { 
+        {
             Vector3 mousePosition = Input.mousePosition;
             Vector3 convertedMousePosition = Camera.main.ScreenToWorldPoint(mousePosition);
             convertedMousePosition.z = 0;
             SetPosition(convertedMousePosition);
 
             Vector3 endWireDifference = convertedMousePosition - EndWire.position;
-            if(endWireDifference.magnitude < .5f)
+            if (endWireDifference.magnitude < .5f)
             {
                 SetPosition(EndWire.position);
                 Dragging = false;
@@ -37,6 +37,8 @@ public class Wire : MonoBehaviour
                 AudioSource.PlayClipAtPoint(ConnectSound, Camera.main.transform.position);
             }
         }
+        
+        
     }
 
     void SetPosition(Vector3 position)
