@@ -80,6 +80,10 @@ public class GameManager : MonoBehaviour
                 // Go through the list, the index tells us the position.
                 for (int i = 0; i < pieces.Count; i++)
                 {
+                    if(pieces[i] != hit.transform) //what piece I clicked
+                    {
+                        continue;
+                    }
                     if (pieces[i] == hit.transform) //what piece I clicked
                     {
                         // Check each direction to see if valid move.
@@ -91,6 +95,15 @@ public class GameManager : MonoBehaviour
                     }
                 }
             }
+            if (!hit)
+            {
+                return;
+            }
+        }
+
+        if (!Input.GetMouseButtonDown(0)) // 0 == left mouse
+        {
+            return;
         }
     }
 
