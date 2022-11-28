@@ -21,6 +21,10 @@ public class Wire : MonoBehaviour
 
     void Update()
     {
+        if (!Dragging)
+        {
+            return;
+        }
         if (Dragging)
         {
             Vector3 mousePosition = Input.mousePosition;
