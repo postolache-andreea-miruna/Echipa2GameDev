@@ -9,7 +9,12 @@ public class CollectItems : MonoBehaviour
 
     [SerializeField]
     private Text _strawberryTxt;
+    [SerializeField]
+    private Canvas _canvas;
+    [SerializeField]
+    private GameObject _lossPrefab;
 
+ 
     //public GameObject strawberryMoney;
     /*    private void Awake()
         {
@@ -35,6 +40,7 @@ public class CollectItems : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.gameObject.CompareTag("Strawberry"))
         {
             Destroy(collision.gameObject); // destroy the strawberry
@@ -45,10 +51,17 @@ public class CollectItems : MonoBehaviour
         }
         if (collision.gameObject.CompareTag("Spike") && strawberry > 0)
         {
+            ShowLoss();
             strawberry--;
             PlayerPrefs.SetInt("Coins", strawberry);
             _strawberryTxt.text = strawberry + " Strawberries";
         }
+    }
+
+    private void ShowLoss()
+    {
+        GameObject lossPrefab = Instantiate(_lossPrefab);
+        lossPrefab.transform.SetParent(_canvas.transform, false);
     }
 
 
