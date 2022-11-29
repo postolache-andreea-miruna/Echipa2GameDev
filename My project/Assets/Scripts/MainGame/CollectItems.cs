@@ -9,6 +9,7 @@ public class CollectItems : MonoBehaviour
 
     [SerializeField]
     private Text _strawberryTxt;
+
     //public GameObject strawberryMoney;
     /*    private void Awake()
         {
@@ -30,32 +31,38 @@ public class CollectItems : MonoBehaviour
     private void Start()
     {
         strawberry = PlayerPrefs.GetInt("Coins", strawberry);
-        _strawberryTxt.text = "Strawberries nr = " + strawberry;
+        _strawberryTxt.text = strawberry + " Strawberries";
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Strawberry"))
         {
             Destroy(collision.gameObject); // destroy the strawberry
-            strawberry = strawberry + 1;
+            strawberry++;
             //strawberryMoneySave();
             PlayerPrefs.SetInt("Coins", strawberry);
-            _strawberryTxt.text = "Strawberries nr = " + strawberry;
+            _strawberryTxt.text = strawberry + " Strawberries";
+        }
+        if (collision.gameObject.CompareTag("Spike") && strawberry > 0)
+        {
+            strawberry--;
+            PlayerPrefs.SetInt("Coins", strawberry);
+            _strawberryTxt.text = strawberry + " Strawberries";
         }
     }
 
 
-   /* public void strawberryMoneySave() //saving player position
-    {
-        PlayerPrefs.SetInt("Coins", strawberry);
-        PlayerPrefs.SetInt("Saved", 1);
-        PlayerPrefs.Save();
+        /* public void strawberryMoneySave() //saving player position
+         {
+             PlayerPrefs.SetInt("Coins", strawberry);
+             PlayerPrefs.SetInt("Saved", 1);
+             PlayerPrefs.Save();
+         }
+
+         public void strawberryMoneyonLoad()
+         {
+             PlayerPrefs.SetInt("LoadTime", 1);
+             PlayerPrefs.Save();
+         }*/
+
     }
-
-    public void strawberryMoneyonLoad()
-    {
-        PlayerPrefs.SetInt("LoadTime", 1);
-        PlayerPrefs.Save();
-    }*/
-
-}

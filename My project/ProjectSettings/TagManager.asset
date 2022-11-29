@@ -12,6 +12,8 @@ TagManager:
   - MitiTransitionTag
   - Platforma
   - Strawberry
+  - Spike
+  - Water
   layers:
   - Default
   - TransparentFX

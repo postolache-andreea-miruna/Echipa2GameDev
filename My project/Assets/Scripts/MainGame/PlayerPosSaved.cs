@@ -36,5 +36,8 @@ public class PlayerPosSaved : MonoBehaviour
         PlayerPrefs.SetInt("LoadTime", 1);
         PlayerPrefs.Save();
     }
-
+    public void ResetPlayerPosition()
+    {
+        player.transform.position = new Vector3(283, 1, 0); //put the player back on the ground after hitting the water
+    }
 }
