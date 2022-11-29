@@ -45264,6 +45264,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _strawberryTxt: {fileID: 2069613987}
+  _canvas: {fileID: 974020784}
+  _lossPrefab: {fileID: 1280575969730590823, guid: c9953506e266ed34f94fbd8ed20a5d0b, type: 3}
 --- !u!114 &1895164167
 MonoBehaviour:
   m_ObjectHideFlags: 0
