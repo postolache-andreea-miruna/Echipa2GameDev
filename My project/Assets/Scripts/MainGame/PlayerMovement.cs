@@ -127,6 +127,11 @@ public class PlayerMovement : MonoBehaviour
 
             SceneManager.LoadScene("MainMenu");
         }
+        if (collision.gameObject.tag == "Water")
+        {
+            playerPosData.ResetPlayerPosition();
+        }
     }
+
 
 }
