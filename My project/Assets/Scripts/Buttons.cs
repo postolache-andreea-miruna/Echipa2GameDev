@@ -13,4 +13,24 @@ public class Buttons : MonoBehaviour
     {
         SceneManager.LoadScene("MainGame");
     }
+
+    public void RestartGameMaze()
+    {
+        SceneManager.LoadScene("LabirintMeniu");
+    }
+
+    public void RestartGameRiver()
+    {
+        SceneManager.LoadScene("RiverMeniu");
+    }
+
+    public void RestartGameFishing()
+    {
+        SceneManager.LoadScene("FishingMeniu");
+    }
+
+    public void RestartGameWires()
+    {
+        SceneManager.LoadScene("BridgeMeniu");
+    }
 }
