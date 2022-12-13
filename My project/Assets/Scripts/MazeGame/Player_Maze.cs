@@ -65,7 +65,7 @@ public class Player_Maze : MonoBehaviour
         float posX = playerMaze.transform.position.x;
         float posY = playerMaze.transform.position.y;
 
-        if (posX == 5.884998 && posY > -4)
+        if (posX == 5.884998 && posY < -4)
         {
             Debug.Log(pointsAsInt);
             //next scene
