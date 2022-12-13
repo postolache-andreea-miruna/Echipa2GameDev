@@ -64,24 +64,27 @@ public class Player_Maze : MonoBehaviour
 
         float posX = playerMaze.transform.position.x;
         float posY = playerMaze.transform.position.y;
-
-        if (posX == 5.884998 && posY < -4)
+        Debug.Log(posX);
+        if (posX > 5.88 && posX < 5.89)
+        //if (posX == 5.884998 && posY < -4)
         {
-            Debug.Log(pointsAsInt);
-            //next scene
-            if (pointsAsInt >= 65)
+            if (posY < -4)
             {
-                //lose
-                SceneManager.LoadScene("MazeLoseGame");
-            }
-            else
-            {
-                //win
-                SceneManager.LoadScene("MazeWinGame");
+                //Debug.Log(pointsAsInt);
+                //next scene
+                if (pointsAsInt >= 65)
+                {
+                    //lose
+                    SceneManager.LoadScene("MazeLoseGame");
+                }
+                else
+                {
+                    //win
+                    SceneManager.LoadScene("MazeWinGame");
+                }
             }
         }
-
-       // Debug.Log(messageOutMaze);
+        Debug.Log(messageOutMaze);
     }
 
 }

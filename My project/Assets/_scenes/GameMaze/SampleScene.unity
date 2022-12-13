@@ -8764,6 +8764,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7e8db00c862ee74a9a12e67b84686b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerMaze: {fileID: 947695425}
   speed: 2
 --- !u!50 &947695433
 Rigidbody2D:

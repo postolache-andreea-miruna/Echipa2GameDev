@@ -1,11 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Transform gameTransform;
     [SerializeField] private Transform piecePrefab;
+    private int time = 360;
+
+    [SerializeField]
+    private Text timeText;
 
     private List<Transform> pieces;
     private int emptyLocation;
@@ -59,11 +64,34 @@ public class GameManager : MonoBehaviour
         pieces = new List<Transform>();
         size = 4;
         CreateGamePieces(0.01f);
-    }
 
+        time = 360;//360
+        timeText.text = "Remain Time: " + time;
+        StartCoroutine(CountTimer());
+    }
+    IEnumerator CountTimer()
+    {
+        while (true)
+        {
+            time -= 1;
+            timeText.text = "Remain Time: " + time;
+            yield return new WaitForSeconds(1);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
+        if (time == 0)
+        {
+            if (CheckCompletion())
+            {
+                SceneManager.LoadScene("RiverWinGame");
+            }
+            else if (CheckCompletion() == false)
+            {
+                SceneManager.LoadScene("RiverLoseGame");
+            }
+        }
         // Check for completion.
         if (!shuffling && CheckCompletion())
         {
