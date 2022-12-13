@@ -7,15 +7,20 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] private Transform gameTransform;
     [SerializeField] private Transform piecePrefab;
-    private int time = 360;
+    private int time = 365;
 
     [SerializeField]
     private Text timeText;
+
+    [SerializeField]
+    private Text finalTimeText;
 
     private List<Transform> pieces;
     private int emptyLocation;
     private int size;
     private bool shuffling = false;
+
+    private int initialState = 0;
 
     // game with 4 x 4 pieces.
     private void CreateGamePieces(float gapThickness)
@@ -65,7 +70,7 @@ public class GameManager : MonoBehaviour
         size = 4;
         CreateGamePieces(0.01f);
 
-        time = 360;//360
+        time = 365;//360
         timeText.text = "Remain Time: " + time;
         StartCoroutine(CountTimer());
     }
@@ -81,22 +86,31 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (CheckCompletion() == true && initialState == 1)
+        {
+            finalTimeText.text = "Time: " + time;
+            SceneManager.LoadScene("RiverWinGame");
+        }
         if (time == 0)
         {
-            if (CheckCompletion())
-            {
-                SceneManager.LoadScene("RiverWinGame");
-            }
-            else if (CheckCompletion() == false)
+            if (CheckCompletion() == false)
             {
                 SceneManager.LoadScene("RiverLoseGame");
             }
         }
         // Check for completion.
-        if (!shuffling && CheckCompletion())
+        if (!shuffling && CheckCompletion() && initialState == 0)
         {
+            Debug.Log(initialState);
             shuffling = true;
-            StartCoroutine(WaitShuffle(0.5f));
+            if (time == 364)
+            {
+
+                StartCoroutine(WaitShuffle(5f));
+                
+
+            }
         }
 
         // On click send out ray to see if we click a piece.
@@ -169,6 +183,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(duration);
         Shuffle();
         shuffling = false;
+        initialState = 1;
     }
 
     // Brute force

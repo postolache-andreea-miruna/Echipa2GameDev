@@ -8766,6 +8766,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerMaze: {fileID: 947695425}
   speed: 2
+  finalStarText: {fileID: 227831164393475253, guid: 86bbe960723e7674cb2a5c1171ea0188, type: 3}
 --- !u!50 &947695433
 Rigidbody2D:
   serializedVersion: 4

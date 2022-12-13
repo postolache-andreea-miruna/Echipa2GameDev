@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class Player_Maze : MonoBehaviour
 {
     public GameObject playerMaze;
@@ -10,6 +10,9 @@ public class Player_Maze : MonoBehaviour
     private float Points = 0f;
 
     private string messageOutMaze = "";
+
+    [SerializeField]
+    private Text finalStarText;
 
     // Start is called before the first frame update
     void Start()
@@ -80,6 +83,7 @@ public class Player_Maze : MonoBehaviour
                 else
                 {
                     //win
+                    finalStarText.text = "Number of stars: " + messageOutMaze;
                     SceneManager.LoadScene("MazeWinGame");
                 }
             }
