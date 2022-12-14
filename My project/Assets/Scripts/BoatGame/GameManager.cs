@@ -8,7 +8,8 @@ public class GameManager : MonoBehaviour
     [SerializeField] private Transform gameTransform;
     [SerializeField] private Transform piecePrefab;
     private int time = 365;
-
+    //private int time = 25;
+    private int remainTime;
     [SerializeField]
     private Text timeText;
 
@@ -69,7 +70,7 @@ public class GameManager : MonoBehaviour
         pieces = new List<Transform>();
         size = 4;
         CreateGamePieces(0.01f);
-
+       // time = 25;
         time = 365;//360
         timeText.text = "Remain Time: " + time;
         StartCoroutine(CountTimer());
@@ -79,7 +80,7 @@ public class GameManager : MonoBehaviour
         while (true)
         {
             time -= 1;
-            timeText.text = "Remain Time: " + time;
+            timeText.text = "Time: " + time;
             yield return new WaitForSeconds(1);
         }
     }
@@ -89,7 +90,9 @@ public class GameManager : MonoBehaviour
 
         if (CheckCompletion() == true && initialState == 1)
         {
-            finalTimeText.text = "Time: " + time;
+            //remainTime = 25 - time;
+            remainTime = 360 - time;
+            finalTimeText.text = "Time: " + remainTime;
             SceneManager.LoadScene("RiverWinGame");
         }
         if (time == 0)
@@ -104,7 +107,8 @@ public class GameManager : MonoBehaviour
         {
             Debug.Log(initialState);
             shuffling = true;
-            if (time == 364)
+            //if (time == 24)
+             if (time == 364)
             {
 
                 StartCoroutine(WaitShuffle(5f));
