@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class CollectItems : MonoBehaviour
 {
-    private int strawberry = 0;
-
+    //private int strawberry = 0;
+    public int strawberry = 0;
     [SerializeField]
     private Text _strawberryTxt;
     [SerializeField]

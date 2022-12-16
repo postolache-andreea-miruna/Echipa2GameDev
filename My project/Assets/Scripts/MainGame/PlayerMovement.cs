@@ -59,8 +59,9 @@ public class PlayerMovement : MonoBehaviour
     }
     private void UpdateAnimation()
     {
-        PlayerMove _move;
         
+        PlayerMove _move;
+
             if (directionX < 0f) //la stanga
             {
                 _spriteRenderer.flipX = true;
@@ -86,6 +87,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 _move = PlayerMove.jump;
             }
+            
             _animator.SetInteger("_move", (int)_move); //transform enum into int
     }
 
@@ -124,13 +126,13 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (collision.gameObject.tag == "MitiTransitionTag")
         {
-
             SceneManager.LoadScene("MainMenu");
         }
         if (collision.gameObject.tag == "Water")
         {
             playerPosData.ResetPlayerPosition();
         }
+        
     }
 
 
