@@ -1,12 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameLogic : MonoBehaviour
 {
     public List<Wire> Wires;
     public AudioClip SuccessSound;
-    
+
+    [SerializeField] 
+    Text countdownText;
+    [SerializeField]
+    Text finalText;
+    float currentTime= 0f;
+    float startingTime = 10f;
+
     void ShuffleWires()
     {
         List<Vector3> endWirePositions = new List<Vector3>();
@@ -27,10 +36,16 @@ public class GameLogic : MonoBehaviour
     void Start()
     {
         ShuffleWires();
+        currentTime = startingTime;
+
     }
 
     void Update()
     {
+        currentTime -= 1 * Time.deltaTime;
+        countdownText.text = "Time left = " + (int)System.Math.Floor(currentTime) + "s";
+
+
         int connectedWires = 0;
         foreach (Wire w in Wires)
         {
@@ -43,16 +58,13 @@ public class GameLogic : MonoBehaviour
         if(connectedWires == Wires.Count)
         {
             AudioSource.PlayClipAtPoint(SuccessSound, Camera.main.transform.position);
-            ResetWires();
+            SceneManager.LoadScene("BridgeWinCase");
+            finalText.text = "Time: " + (int)System.Math.Floor(startingTime - currentTime) + " seconds";
+        }
+        if(currentTime <= 0)
+        {
+            SceneManager.LoadScene("BridgeLoseCase");
         }
     }
 
-    public void ResetWires()
-    {
-        foreach (Wire w in Wires)
-        {
-            w.SetConnected(false);
-        }
-        ShuffleWires();
-    }
 }
