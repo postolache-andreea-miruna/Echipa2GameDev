@@ -1,7 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
+/**
+ * In unity all the settings are made, now all you have to do is put these two lines where the win part is happenings
+ * SceneManager.LoadScene("FishingWinCase");
+   finalText.text = "Time: " + (int)System.Math.Floor(startingTime - currentTime) + " seconds";
+ */
 public class FishingMiniGame : MonoBehaviour
 {
     [Header("Fishing Area")]
@@ -30,13 +37,25 @@ public class FishingMiniGame : MonoBehaviour
     [SerializeField] float progressBarDecay;
     float catchProgress;
 
+    [SerializeField] Text countdownText;
+    [SerializeField] Text finalText;
+    float currentTime = 0f;
+    float startingTime = 30f;
 
+    void Start()
+    {
+        currentTime = startingTime;
+    }
 
     private void FixedUpdate()
     {
+        currentTime -= 1 * Time.deltaTime;
+        countdownText.text = "Time left = " + (int)System.Math.Floor(currentTime) + "s";
+
         MoveFish();
         MoveHook();
         CheckProgress();
+
     }
     private void MoveFish()
     {
@@ -79,8 +98,12 @@ public class FishingMiniGame : MonoBehaviour
         if(min<fishPosition && fishPosition<max)
         {
             catchProgress += hookPower * Time.deltaTime;
-            if (catchProgress >= 1)
-                Debug.Log("You win");
+            if (catchProgress >= 1 && currentTime < 27f)
+            {
+                SceneManager.LoadScene("FishingWinCase");
+                finalText.text = "Time: " + (int)System.Math.Floor(startingTime - currentTime) + " seconds";
+            }
+                
         }
         else
         {
@@ -89,6 +112,11 @@ public class FishingMiniGame : MonoBehaviour
                 Debug.Log("You lose");
         }
         catchProgress = Mathf.Clamp(catchProgress, 0, 1);
+
+        if (currentTime <= 0)
+        {
+            SceneManager.LoadScene("FishingLoseCase");
+        }
     }
 
 }
