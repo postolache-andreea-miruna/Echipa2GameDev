@@ -80,4 +80,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_scenes/GameMaze/MazeWinGame.unity
     guid: 05f472491a064254abbf68c63c0ffe62
+  - enabled: 1
+    path: Assets/_scenes/StrawberryScenes/BonusScene.unity
+    guid: 3ed0891a2f16f6c47ad0cb7962693af0
+  - enabled: 1
+    path: Assets/_scenes/StrawberryScenes/GameOverScene.unity
+    guid: 1a1a434fa3a17b04584fe098f2e7eef8
+  - enabled: 1
+    path: Assets/_scenes/StrawberryScenes/KingReunitedScene.unity
+    guid: 364678d838d7bcb4993edc239b7b16ee
+  - enabled: 1
+    path: Assets/_scenes/StrawberryScenes/VideoScene.unity
+    guid: 48e9146e0d0cce74686148221f63f0ae
   m_configObjects: {}
