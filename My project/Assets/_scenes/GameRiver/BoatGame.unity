@@ -435,7 +435,7 @@ MonoBehaviour:
   gameTransform: {fileID: 819213589}
   piecePrefab: {fileID: 8479986860635118936, guid: 7db26a6f08b909f44a62392db4ad4a61, type: 3}
   timeText: {fileID: 1173847229}
-  finalTimeText: {fileID: 9149298809692791525, guid: 15552a3bb1305be468001ac1c6c29afa, type: 3}
+  finalTimeText: {fileID: 4588474000557524032, guid: ee4b1cf33d34b6e419d92fda30c598b0, type: 3}
 --- !u!4 &1678474809
 Transform:
   m_ObjectHideFlags: 0

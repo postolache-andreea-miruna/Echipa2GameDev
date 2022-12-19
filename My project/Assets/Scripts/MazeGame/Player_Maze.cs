@@ -83,8 +83,10 @@ public class Player_Maze : MonoBehaviour
                 else
                 {
                     //win
-                    finalStarText.text = "Number of stars: " + messageOutMaze;
                     SceneManager.LoadScene("MazeWinGame");
+                    finalStarText.text = "Number of stars: " + messageOutMaze;
+                    Debug.Log(finalStarText.text);
+                    //SceneManager.LoadScene("MazeWinGame");
                 }
             }
         }

@@ -92,6 +92,7 @@ public class GameManager : MonoBehaviour
         {
             //remainTime = 25 - time;
             remainTime = 360 - time;
+            Debug.Log(remainTime);
             finalTimeText.text = "Time: " + remainTime;
             SceneManager.LoadScene("RiverWinGame");
         }
