@@ -1,16 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] private Transform gameTransform;
     [SerializeField] private Transform piecePrefab;
+    private int time = 365;
+    //private int time = 25;
+    private int remainTime;
+    [SerializeField]
+    private Text timeText;
+
+    [SerializeField]
+    private Text finalTimeText;
 
     private List<Transform> pieces;
     private int emptyLocation;
     private int size;
     private bool shuffling = false;
+
+    private int initialState = 0;
 
     // game with 4 x 4 pieces.
     private void CreateGamePieces(float gapThickness)
@@ -59,16 +70,52 @@ public class GameManager : MonoBehaviour
         pieces = new List<Transform>();
         size = 4;
         CreateGamePieces(0.01f);
+       // time = 25;
+        time = 365;//360
+        timeText.text = "Remain Time: " + time;
+        StartCoroutine(CountTimer());
     }
-
+    IEnumerator CountTimer()
+    {
+        while (true)
+        {
+            time -= 1;
+            timeText.text = "Time: " + time;
+            yield return new WaitForSeconds(1);
+        }
+    }
     // Update is called once per frame
     void Update()
     {
-        // Check for completion.
-        if (!shuffling && CheckCompletion())
+
+        if (CheckCompletion() == true && initialState == 1)
         {
+            //remainTime = 25 - time;
+            remainTime = 360 - time;
+            Debug.Log(remainTime);
+            finalTimeText.text = "Time: " + remainTime;
+            SceneManager.LoadScene("RiverWinGame");
+        }
+        if (time == 0)
+        {
+            if (CheckCompletion() == false)
+            {
+                SceneManager.LoadScene("RiverLoseGame");
+            }
+        }
+        // Check for completion.
+        if (!shuffling && CheckCompletion() && initialState == 0)
+        {
+            Debug.Log(initialState);
             shuffling = true;
-            StartCoroutine(WaitShuffle(0.5f));
+            //if (time == 24)
+             if (time == 364)
+            {
+
+                StartCoroutine(WaitShuffle(5f));
+                
+
+            }
         }
 
         // On click send out ray to see if we click a piece.
@@ -80,6 +127,10 @@ public class GameManager : MonoBehaviour
                 // Go through the list, the index tells us the position.
                 for (int i = 0; i < pieces.Count; i++)
                 {
+                    if(pieces[i] != hit.transform) //what piece I clicked
+                    {
+                        continue;
+                    }
                     if (pieces[i] == hit.transform) //what piece I clicked
                     {
                         // Check each direction to see if valid move.
@@ -91,6 +142,15 @@ public class GameManager : MonoBehaviour
                     }
                 }
             }
+            if (!hit)
+            {
+                return;
+            }
+        }
+
+        if (!Input.GetMouseButtonDown(0)) // 0 == left mouse
+        {
+            return;
         }
     }
 
@@ -128,6 +188,7 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(duration);
         Shuffle();
         shuffling = false;
+        initialState = 1;
     }
 
     // Brute force

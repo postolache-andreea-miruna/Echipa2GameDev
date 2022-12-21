@@ -30,6 +30,12 @@ EditorBuildSettings:
     path: Assets/_scenes/GameBridge/PuzzleFire.unity
     guid: ccf2267dc8dcde94e936931176737dfa
   - enabled: 1
+    path: Assets/_scenes/GameBridge/BridgeLoseCase.unity
+    guid: 849d5d2c9bf9baa43b2e8016ca88adaf
+  - enabled: 1
+    path: Assets/_scenes/GameBridge/BridgeWinCase.unity
+    guid: 84f33e02a62c06342ad7f09e1cff565b
+  - enabled: 1
     path: Assets/_scenes/GameFishing/FishIntro.unity
     guid: 4a7a1344e9289f342bf30013333ec967
   - enabled: 1
@@ -38,6 +44,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_scenes/GameFishing/Fishing.unity
     guid: 5061a92c0c833bb4bbaa0409d7bcec2d
+  - enabled: 1
+    path: Assets/_scenes/GameFishing/FishingLoseCase.unity
+    guid: b5c2bcba38ce0bd4b883cb891765ddbd
+  - enabled: 1
+    path: Assets/_scenes/GameFishing/FishingWinCase.unity
+    guid: 3bc7038a7eac2384b97367889da89ad3
   - enabled: 1
     path: Assets/_scenes/GameRiver/RiverIntro.unity
     guid: 27f77fd167502bb4e9072ac10bfcf486
@@ -48,6 +60,12 @@ EditorBuildSettings:
     path: Assets/_scenes/GameRiver/BoatGame.unity
     guid: f75b23369a14a5c4e89f128057df1f3a
   - enabled: 1
+    path: Assets/_scenes/GameRiver/RiverLoseGame.unity
+    guid: 71ada9b2c532d3c4cbda4da6b3c766fb
+  - enabled: 1
+    path: Assets/_scenes/GameRiver/RiverWinGame.unity
+    guid: a07fe716a05384c409f3cff41df74e0c
+  - enabled: 1
     path: Assets/_scenes/GameMaze/LabirintIntro.unity
     guid: 2192b0c7a0355e24b8849fc985163ece
   - enabled: 1
@@ -56,4 +74,22 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_scenes/GameMaze/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/_scenes/GameMaze/MazeLoseGame.unity
+    guid: 5006f77e05c6f784aa6a01af24a97a41
+  - enabled: 1
+    path: Assets/_scenes/GameMaze/MazeWinGame.unity
+    guid: 05f472491a064254abbf68c63c0ffe62
+  - enabled: 1
+    path: Assets/_scenes/StrawberryScenes/BonusScene.unity
+    guid: 3ed0891a2f16f6c47ad0cb7962693af0
+  - enabled: 1
+    path: Assets/_scenes/StrawberryScenes/GameOverScene.unity
+    guid: 1a1a434fa3a17b04584fe098f2e7eef8
+  - enabled: 1
+    path: Assets/_scenes/StrawberryScenes/KingReunitedScene.unity
+    guid: 364678d838d7bcb4993edc239b7b16ee
+  - enabled: 1
+    path: Assets/_scenes/StrawberryScenes/VideoScene.unity
+    guid: 48e9146e0d0cce74686148221f63f0ae
   m_configObjects: {}

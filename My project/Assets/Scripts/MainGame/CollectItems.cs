@@ -5,10 +5,16 @@ using UnityEngine.UI;
 
 public class CollectItems : MonoBehaviour
 {
-    private int strawberry = 0;
-
+    //private int strawberry = 0;
+    public int strawberry = 0;
     [SerializeField]
     private Text _strawberryTxt;
+    [SerializeField]
+    private Canvas _canvas;
+    [SerializeField]
+    private GameObject _lossPrefab;
+
+ 
     //public GameObject strawberryMoney;
     /*    private void Awake()
         {
@@ -30,32 +36,46 @@ public class CollectItems : MonoBehaviour
     private void Start()
     {
         strawberry = PlayerPrefs.GetInt("Coins", strawberry);
-        _strawberryTxt.text = "Strawberries nr = " + strawberry;
+        _strawberryTxt.text = strawberry + " Strawberries";
     }
     private void OnTriggerEnter2D(Collider2D collision)
     {
+
         if (collision.gameObject.CompareTag("Strawberry"))
         {
             Destroy(collision.gameObject); // destroy the strawberry
-            strawberry = strawberry + 1;
+            strawberry++;
             //strawberryMoneySave();
             PlayerPrefs.SetInt("Coins", strawberry);
-            _strawberryTxt.text = "Strawberries nr = " + strawberry;
+            _strawberryTxt.text = strawberry + " Strawberries";
+        }
+        if (collision.gameObject.CompareTag("Spike") && strawberry > 0)
+        {
+            ShowLoss();
+            strawberry--;
+            PlayerPrefs.SetInt("Coins", strawberry);
+            _strawberryTxt.text = strawberry + " Strawberries";
         }
     }
 
-
-   /* public void strawberryMoneySave() //saving player position
+    private void ShowLoss()
     {
-        PlayerPrefs.SetInt("Coins", strawberry);
-        PlayerPrefs.SetInt("Saved", 1);
-        PlayerPrefs.Save();
+        GameObject lossPrefab = Instantiate(_lossPrefab);
+        lossPrefab.transform.SetParent(_canvas.transform, false);
     }
 
-    public void strawberryMoneyonLoad()
-    {
-        PlayerPrefs.SetInt("LoadTime", 1);
-        PlayerPrefs.Save();
-    }*/
 
-}
+        /* public void strawberryMoneySave() //saving player position
+         {
+             PlayerPrefs.SetInt("Coins", strawberry);
+             PlayerPrefs.SetInt("Saved", 1);
+             PlayerPrefs.Save();
+         }
+
+         public void strawberryMoneyonLoad()
+         {
+             PlayerPrefs.SetInt("LoadTime", 1);
+             PlayerPrefs.Save();
+         }*/
+
+    }
