@@ -10,6 +10,7 @@ public class Player_Maze : MonoBehaviour
     private float Points = 0f;
 
     private string messageOutMaze = "";
+    private string sceneToLoad = "";
 
     [SerializeField]
     private Text finalStarText;
@@ -33,12 +34,14 @@ public class Player_Maze : MonoBehaviour
         {
             transform.position += Vector3.down * speed * Time.deltaTime;
             Points += speed * Time.deltaTime;
-        }
+        }
+
         if (Input.GetKey(KeyCode.A))
         {
             transform.position += Vector3.left * speed * Time.deltaTime;
             Points += speed * Time.deltaTime;
-        }
+        }
+
         if (Input.GetKey(KeyCode.D))
         {
             transform.position += Vector3.right * speed * Time.deltaTime;
@@ -50,14 +53,17 @@ public class Player_Maze : MonoBehaviour
         if (pointsAsInt < 54)
         {
             messageOutMaze = "3 stele";
+            sceneToLoad = "MazeWin3Game";
         }
         else if (pointsAsInt < 60)
         {
             messageOutMaze = "2 stele";
+            sceneToLoad = "MazeWin2Game";
         }
         else if (pointsAsInt < 65)
         {
             messageOutMaze = "1 stea";
+            sceneToLoad = "MazeWin1Game";
         }
         else
         {
@@ -83,7 +89,7 @@ public class Player_Maze : MonoBehaviour
                 else
                 {
                     //win
-                    SceneManager.LoadScene("MazeWinGame");
+                    SceneManager.LoadScene(sceneToLoad);
                     finalStarText.text = "Number of stars: " + messageOutMaze;
                     Debug.Log(finalStarText.text);
                     //SceneManager.LoadScene("MazeWinGame");
