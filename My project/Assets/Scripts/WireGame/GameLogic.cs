@@ -17,6 +17,7 @@ public class GameLogic : MonoBehaviour
     Text finalText;
     float currentTime= 0f;
     float startingTime = 10f;
+    private string sceneToLoad = "";
 
     void ShuffleWires()
     {
@@ -63,18 +64,21 @@ public class GameLogic : MonoBehaviour
         if (currentTime >= 5f) // cel putin 5 sec ramase
         {
             messageOutMaze = "3 stele";
+            sceneToLoad = "BridgeWin3Case";
         }
         else if (currentTime >= 2f)  // intre 2 si 4 sec ramase
         {
             messageOutMaze = "2 stele";
+            sceneToLoad = "BridgeWin2Case";
         }
         else if (currentTime > 0f) // intre 1 si 2
         {
             messageOutMaze = "1 stea";
+            sceneToLoad = "BridgeWin1Case";
         }
 
         AudioSource.PlayClipAtPoint(SuccessSound, Camera.main.transform.position);
-        SceneManager.LoadScene("BridgeWinCase");
+        SceneManager.LoadScene(sceneToLoad);
         finalText.text =  "Number of stars: " + messageOutMaze; //"Time: " + (int)System.Math.Floor(startingTime - currentTime) + " seconds" + "\n" +
 
         }
