@@ -9,12 +9,15 @@ public class GameLogic : MonoBehaviour
     public List<Wire> Wires;
     public AudioClip SuccessSound;
 
+    private string messageOutMaze = "";
+
     [SerializeField] 
     Text countdownText;
     [SerializeField]
     Text finalText;
     float currentTime= 0f;
     float startingTime = 10f;
+    private string sceneToLoad = "";
 
     void ShuffleWires()
     {
@@ -57,14 +60,36 @@ public class GameLogic : MonoBehaviour
 
         if(connectedWires == Wires.Count)
         {
-            AudioSource.PlayClipAtPoint(SuccessSound, Camera.main.transform.position);
-            SceneManager.LoadScene("BridgeWinCase");
-            finalText.text = "Time: " + (int)System.Math.Floor(startingTime - currentTime) + " seconds";
+        
+        if (currentTime >= 5f) // cel putin 5 sec ramase
+        {
+            messageOutMaze = "3 stele";
+            sceneToLoad = "BridgeWin3Case";
         }
-        if(currentTime <= 0)
+        else if (currentTime >= 2f)  // intre 2 si 4 sec ramase
+        {
+            messageOutMaze = "2 stele";
+            sceneToLoad = "BridgeWin2Case";
+        }
+        else if (currentTime > 0f) // intre 1 si 2
+        {
+            messageOutMaze = "1 stea";
+            sceneToLoad = "BridgeWin1Case";
+        }
+
+        AudioSource.PlayClipAtPoint(SuccessSound, Camera.main.transform.position);
+        SceneManager.LoadScene(sceneToLoad);
+        finalText.text =  "Number of stars: " + messageOutMaze; //"Time: " + (int)System.Math.Floor(startingTime - currentTime) + " seconds" + "\n" +
+
+        }
+
+        //try to make a logic with interval points/stars
+        
+        if(currentTime <= 0) // 0 sau mai putin
         {
             SceneManager.LoadScene("BridgeLoseCase");
         }
+        
     }
 
 }

@@ -22,6 +22,8 @@ public class GameManager : MonoBehaviour
     private bool shuffling = false;
 
     private int initialState = 0;
+    private string messageOutMaze = "";
+    private string sceneToLoad = "";
 
     // game with 4 x 4 pieces.
     private void CreateGamePieces(float gapThickness)
@@ -92,8 +94,26 @@ public class GameManager : MonoBehaviour
         {
             //remainTime = 25 - time;
             remainTime = 360 - time;
-            finalTimeText.text = "Time: " + remainTime;
-            SceneManager.LoadScene("RiverWinGame");
+            Debug.Log(remainTime);
+
+                if (remainTime >= 100) // cel putin 5 sec ramase
+                {
+                    messageOutMaze = "3 stele";
+                    sceneToLoad = "RiverWin3Game";
+                }
+                else if (remainTime >= 21)  // intre 2 si 4 sec ramase
+                {
+                    messageOutMaze = "2 stele";
+                    sceneToLoad = "RiverWin2Game";
+                }
+                else if (remainTime > 20) // intre 1 si 2
+                {
+                    messageOutMaze = "1 stea";
+                    sceneToLoad = "RiverWin1Game";
+                }
+
+            finalTimeText.text = "Number of stars: " + messageOutMaze; //"Time: " + remainTime;
+            SceneManager.LoadScene(sceneToLoad);
         }
         if (time == 0)
         {

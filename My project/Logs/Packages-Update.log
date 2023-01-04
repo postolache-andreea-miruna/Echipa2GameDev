@@ -76,3 +76,11 @@ The following packages were updated:
   com.unity.ide.rider from version 3.0.15 to 3.0.16
   com.unity.render-pipelines.universal from version 13.1.8 to 15.0.1
   com.unity.timeline from version 1.7.1 to 1.7.2
+
+=== Wed Dec 21 12:45:29 2022
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.render-pipelines.universal from version 13.1.8 to 15.0.1

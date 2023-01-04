@@ -44,11 +44,11 @@ MonoBehaviour:
     x: 0
     y: 30
     width: 1602.7827
-    height: 768.92175
+    height: 768.9218
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 106
+  controlID: 65
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -67,7 +67,7 @@ MonoBehaviour:
     x: 1224.6261
     y: 0
     width: 378.15662
-    height: 768.92175
+    height: 768.9218
   m_MinSize: {x: 276, y: 71}
   m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
@@ -119,7 +119,7 @@ MonoBehaviour:
     x: 0
     y: 454.95654
     width: 1224.6261
-    height: 313.9652
+    height: 313.96527
   m_MinSize: {x: 231, y: 271}
   m_MaxSize: {x: 10001, y: 10021}
   m_ActualView: {fileID: 12}
@@ -149,7 +149,7 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1602.7827
-    height: 818.92175
+    height: 818.9218
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_UseTopView: 1
@@ -194,7 +194,7 @@ MonoBehaviour:
   m_Position:
     serializedVersion: 2
     x: 0
-    y: 798.92175
+    y: 798.9218
     width: 1602.7827
     height: 20
   m_MinSize: {x: 0, y: 0}
@@ -219,11 +219,11 @@ MonoBehaviour:
     x: 0
     y: 0
     width: 1224.6261
-    height: 768.92175
+    height: 768.9218
   m_MinSize: {x: 200, y: 100}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 49
+  controlID: 66
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -248,7 +248,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 50}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 50
+  controlID: 20
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -299,7 +299,7 @@ MonoBehaviour:
     x: 0
     y: 527.58264
     width: 1223.6261
-    height: 292.9652
+    height: 292.96527
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -317,7 +317,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/MainGame
+    - Assets/Scripts/MazeGame
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -326,17 +326,17 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/MainGame
+  - Assets/Scripts/MazeGame
   m_LastFoldersGridSize: -1
   m_LastProjectPath: D:\FACULTATE\CURSURI\AN3_SEM1\GameDev\PROIECT\Echipa2GameDev\My
     project
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 180}
-    m_SelectedIDs: 4c7c0000
-    m_LastClickedID: 31820
-    m_ExpandedIDs: 000000008c7a0000367c000000ca9a3b
+    scrollPos: {x: 0, y: 300}
+    m_SelectedIDs: e4780000
+    m_LastClickedID: 30948
+    m_ExpandedIDs: 000000003e77000040770000c678000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -352,7 +352,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 5}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -364,7 +364,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000008c7a0000
+    m_ExpandedIDs: 000000003e77000040770000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -391,8 +391,8 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 0
-    m_ExpandedInstanceIDs: c6230000
+    m_HadKeyboardFocusLastEvent: 1
+    m_ExpandedInstanceIDs: c6230000627f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -443,7 +443,7 @@ MonoBehaviour:
     x: 1224.6262
     y: 72.62609
     width: 377.15662
-    height: 747.92175
+    height: 747.9218
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default
@@ -494,9 +494,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 
+      m_SelectedIDs: 54200000
       m_LastClickedID: 0
-      m_ExpandedIDs: 1afbffff
+      m_ExpandedIDs: 7a01ffffd406ffff7e07ffff2808ffff220affff4a0cffff5e0fffff1810ffffca10ffff7c11ffff3215ffffdc15ffffd216ffff8417ffffd21affff841bffff361cffff2e1dffffd41dffff8a1effff4a21ffff4828ffffb22effff7631ffff2232ffff6634ffff1035ffffba35ffff7e36ffff2837ffffd237ffff8438ffff8e3bffff1c3effffb848ffff6249ffff0c4affffb84affff664bffff0c4cffffba4fffff6c52ffffa853ffff5454fffffe54ffffa855ffff5256ffff0257ffff968cffff3492ffff6095ffff0a9effffaaa1ffffb6c6ffff8ecbffffb4d3ffff2cd9ffff24ddffffd8e9ffffeeeaffff9cebffffe4ecffff8ef8ffff1afbffff7e7b00007e900000ca980000109c0000189c0000a69f000004a00000dcb4000074b5000038be000090be0000dcbe0000b2c0000096c100003cc2000074c60000cccd000054cf0000fcd00000a6d100004cd20000aed30000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -974,9 +974,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 106.99656, y: 382.43134, z: -0.080357656}
+    m_Target: {x: 603.03033, y: 287.04068, z: -1.9760811}
     speed: 2
-    m_Value: {x: 106.99656, y: 382.43134, z: -0.080357656}
+    m_Value: {x: 603.03033, y: 287.04068, z: -1.9760811}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1026,9 +1026,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 95.35699
+    m_Target: 336.05334
     speed: 2
-    m_Value: 95.35699
+    m_Value: 336.05334
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -1130,7 +1130,7 @@ MonoBehaviour:
       y: 21
       width: 919.6
       height: 412.95654
-    m_Scale: {x: 1, y: 1}
+    m_Scale: {x: 1.0609, y: 1.0609}
     m_Translation: {x: 459.8, y: 206.47827}
     m_MarginLeft: 0
     m_MarginRight: 0
@@ -1138,10 +1138,10 @@ MonoBehaviour:
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -459.8
-      y: -206.47827
-      width: 919.6
-      height: 412.95654
+      x: -433.4056
+      y: -194.62558
+      width: 866.8112
+      height: 389.25116
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 1101.6041, y: 519.84375}
@@ -1172,10 +1172,10 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 2249
-    y: 726.5
-    width: 920
-    height: 250
+    x: 0
+    y: 527.58264
+    width: 1223.6261
+    height: 292.96527
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
     m_LastAppliedPresetName: Default

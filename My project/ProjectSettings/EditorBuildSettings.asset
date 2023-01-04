@@ -36,6 +36,15 @@ EditorBuildSettings:
     path: Assets/_scenes/GameBridge/BridgeWinCase.unity
     guid: 84f33e02a62c06342ad7f09e1cff565b
   - enabled: 1
+    path: Assets/_scenes/GameBridge/BridgeWin1Case.unity
+    guid: 6792149a3db5ba74c91c2a9c6404fdf3
+  - enabled: 1
+    path: Assets/_scenes/GameBridge/BridgeWin2Case.unity
+    guid: ae42432d7e2c86e40be345b07096dc41
+  - enabled: 1
+    path: Assets/_scenes/GameBridge/BridgeWin3Case.unity
+    guid: f3c9b33d2128f054f869398153db8b56
+  - enabled: 1
     path: Assets/_scenes/GameFishing/FishIntro.unity
     guid: 4a7a1344e9289f342bf30013333ec967
   - enabled: 1
@@ -47,6 +56,15 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_scenes/GameFishing/FishingLoseCase.unity
     guid: b5c2bcba38ce0bd4b883cb891765ddbd
+  - enabled: 1
+    path: Assets/_scenes/GameFishing/FishingWin1Case.unity
+    guid: 9b708c5ce29b7584fb9eff3af275bbec
+  - enabled: 1
+    path: Assets/_scenes/GameFishing/FishingWin2Case.unity
+    guid: 58999383f6c4e2b41b82fe43cdb75e1f
+  - enabled: 1
+    path: Assets/_scenes/GameFishing/FishingWin3Case.unity
+    guid: bd458aa358ac9cc48a5b2c66e4069431
   - enabled: 1
     path: Assets/_scenes/GameFishing/FishingWinCase.unity
     guid: 3bc7038a7eac2384b97367889da89ad3
@@ -66,6 +84,15 @@ EditorBuildSettings:
     path: Assets/_scenes/GameRiver/RiverWinGame.unity
     guid: a07fe716a05384c409f3cff41df74e0c
   - enabled: 1
+    path: Assets/_scenes/GameRiver/RiverWin1Game.unity
+    guid: 43e112cb51380684dbfd8897424a728e
+  - enabled: 1
+    path: Assets/_scenes/GameRiver/RiverWin2Game.unity
+    guid: 37afe640a5342fd4ba4e7d16be86dd87
+  - enabled: 1
+    path: Assets/_scenes/GameRiver/RiverWin3Game.unity
+    guid: d2beffacde2552744ba2302dda780479
+  - enabled: 1
     path: Assets/_scenes/GameMaze/LabirintIntro.unity
     guid: 2192b0c7a0355e24b8849fc985163ece
   - enabled: 1
@@ -80,4 +107,26 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_scenes/GameMaze/MazeWinGame.unity
     guid: 05f472491a064254abbf68c63c0ffe62
+  - enabled: 1
+    path: Assets/_scenes/GameMaze/MazeWin1Game.unity
+    guid: c0fd10a21953fd54bbd65bdc3927de19
+  - enabled: 1
+    path: Assets/_scenes/GameMaze/MazeWin2Game.unity
+    guid: 1d6338704b855d143bfff442a0c32bd7
+  - enabled: 1
+    path: Assets/_scenes/GameMaze/MazeWin3Game.unity
+    guid: c9be9df12bf9e7e45a87d5c6f15f59e4
+  - enabled: 1
+    path: Assets/_scenes/StrawberryScenes/BonusScene.unity
+    guid: 3ed0891a2f16f6c47ad0cb7962693af0
+  - enabled: 1
+    path: Assets/_scenes/StrawberryScenes/GameOverScene.unity
+    guid: 1a1a434fa3a17b04584fe098f2e7eef8
+  - enabled: 1
+    path: Assets/_scenes/StrawberryScenes/KingReunitedScene.unity
+    guid: 364678d838d7bcb4993edc239b7b16ee
+  - enabled: 1
+    path: Assets/_scenes/StrawberryScenes/VideoScene.unity
+    guid: 48e9146e0d0cce74686148221f63f0ae
   m_configObjects: {}
+  m_UseUCBPForAssetBundles: 0

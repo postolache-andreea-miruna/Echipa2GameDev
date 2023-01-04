@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
     private float moveSpeed = 14f;
     [SerializeField]
     private float jumpHigh = 7f;
-
+    private int strawberry;
     private enum PlayerMove {initial, run, jump, fall}
 
     //neww
@@ -126,7 +126,15 @@ public class PlayerMovement : MonoBehaviour
         }
         else if (collision.gameObject.tag == "MitiTransitionTag")
         {
-            SceneManager.LoadScene("MainMenu");
+            strawberry = PlayerPrefs.GetInt("Coins", 0);
+            if (strawberry <= 14)
+                SceneManager.LoadScene("GameOverScene");
+            else if (strawberry > 14 && strawberry <= 29)
+                SceneManager.LoadScene("KingReunitedScene");
+            else if (strawberry > 29 && strawberry <= 49)
+                SceneManager.LoadScene("BonusScene");
+            else if(strawberry > 49)
+                SceneManager.LoadScene("VideoScene");
         }
         if (collision.gameObject.tag == "Water")
         {

@@ -18,6 +18,11 @@ public class Buttons : MonoBehaviour
         SceneManager.LoadScene("MainGame");
     }
 
+    public void GoToMainMenu()
+    {
+        SceneManager.LoadScene("MainMenu");
+    }
+
     public void RestartGameMaze()
     {
         SceneManager.LoadScene("LabirintMeniu");
