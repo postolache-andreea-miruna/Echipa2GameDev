@@ -140,17 +140,17 @@ public class PlayerMovement : MonoBehaviour
         {
             playerPosData.ResetPlayerPosition(283, 1);
         }
-
     }
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
-
-        if (collision.gameObject.CompareTag("Spike"))
+        if (collision.gameObject.CompareTag("Saw"))
         {
             playerPosData.ResetPlayerPosition(64, 5);
         }
-
+        else if (collision.gameObject.CompareTag("Spike"))
+        {
+            _rigidBody.velocity = Vector3.zero;    
+        }
     }
-
-
 }

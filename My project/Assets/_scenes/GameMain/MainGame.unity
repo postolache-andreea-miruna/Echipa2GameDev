@@ -43263,7 +43263,7 @@ GameObject:
   - component: {fileID: 1809978318}
   m_Layer: 0
   m_Name: Saw
-  m_TagString: Spike
+  m_TagString: Saw
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -43374,7 +43374,7 @@ CircleCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -44419,6 +44419,10 @@ PrefabInstance:
       propertyPath: limits.Array.data[1]
       value: 
       objectReference: {fileID: 1054305737}
+    - target: {fileID: 3083338215077628590, guid: e28f0f5a4f6228e4b8d96634443b08e3, type: 3}
+      propertyPath: m_BodyType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3083338215077628755, guid: e28f0f5a4f6228e4b8d96634443b08e3, type: 3}
       propertyPath: m_Name
       value: PlayerGame

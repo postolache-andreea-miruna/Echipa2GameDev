@@ -49,7 +49,7 @@ public class CollectItems : MonoBehaviour
             PlayerPrefs.SetInt("Coins", strawberry);
             _strawberryTxt.text = strawberry + " Strawberries";
         }
-        if (collision.gameObject.CompareTag("Spike") && strawberry > 0)
+        if ((collision.gameObject.CompareTag("Spike") || collision.gameObject.CompareTag("Saw")) && strawberry > 0)
         {
             ShowLoss();
             strawberry--;
