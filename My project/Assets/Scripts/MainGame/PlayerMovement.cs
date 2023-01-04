@@ -99,32 +99,32 @@ public class PlayerMovement : MonoBehaviour
     public void OnCollisionEnter2D(Collision2D collision)
     {
         
-        if (collision.gameObject.tag == "MazeTransitionTag")
+        if (collision.gameObject.CompareTag("MazeTransitionTag"))
         {
 
             playerPosData2.PlayerPositionSave();
             MazeGameBeh.Instance.sceneToMoveTo();
         }
 
-        else if (collision.gameObject.tag == "BridgeTransitionTag")
+        else if (collision.gameObject.CompareTag("BridgeTransitionTag"))
         {
             playerPosData2.PlayerPositionSave();
             BridgeGameBeh.Instance.sceneToMoveTo();
             
         }
 
-        else if (collision.gameObject.tag == "FishTransitionTag")
+        else if (collision.gameObject.CompareTag("FishTransitionTag"))
         {
             playerPosData2.PlayerPositionSave();
             FishGameBeh.Instance.sceneToMoveTo();
         }
 
-        else if (collision.gameObject.tag == "RiverTransitionTag")
+        else if (collision.gameObject.CompareTag("RiverTransitionTag"))
         {
             playerPosData2.PlayerPositionSave();
             RiverGameBeh.Instance.sceneToMoveTo();
         }
-        else if (collision.gameObject.tag == "MitiTransitionTag")
+        else if (collision.gameObject.CompareTag("MitiTransitionTag"))
         {
             strawberry = PlayerPrefs.GetInt("Coins", 0);
             if (strawberry <= 14)
@@ -136,11 +136,20 @@ public class PlayerMovement : MonoBehaviour
             else if(strawberry > 49)
                 SceneManager.LoadScene("VideoScene");
         }
-        if (collision.gameObject.tag == "Water")
+        else if (collision.gameObject.CompareTag("Water"))
         {
-            playerPosData.ResetPlayerPosition();
+            playerPosData.ResetPlayerPosition(283, 1);
         }
-        
+
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
+        if (collision.gameObject.CompareTag("Spike"))
+        {
+            playerPosData.ResetPlayerPosition(64, 5);
+        }
+
     }
 
 
