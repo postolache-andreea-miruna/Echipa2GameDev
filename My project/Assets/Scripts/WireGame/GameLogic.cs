@@ -1,0 +1,95 @@
+using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+
+public class GameLogic : MonoBehaviour
+{
+    public List<Wire> Wires;
+    public AudioClip SuccessSound;
+
+    private string messageOutMaze = "";
+
+    [SerializeField] 
+    Text countdownText;
+    [SerializeField]
+    Text finalText;
+    float currentTime= 0f;
+    float startingTime = 10f;
+    private string sceneToLoad = "";
+
+    void ShuffleWires()
+    {
+        List<Vector3> endWirePositions = new List<Vector3>();
+        foreach(Wire w in Wires)
+        {
+            Vector3 position = w.EndWire.position;
+            endWirePositions.Add(position);
+        }
+        foreach (Wire w in Wires)
+        {
+            int randomIndex = Random.Range(0, endWirePositions.Count);
+            w.EndWire.position = endWirePositions[randomIndex];
+            endWirePositions.RemoveAt(randomIndex);
+        }
+
+    }
+
+    void Start()
+    {
+        ShuffleWires();
+        currentTime = startingTime;
+
+    }
+
+    void Update()
+    {
+        currentTime -= 1 * Time.deltaTime;
+        countdownText.text = "Time left = " + (int)System.Math.Floor(currentTime) + "s";
+
+
+        int connectedWires = 0;
+        foreach (Wire w in Wires)
+        {
+            if (w.IsConnected())
+            {
+                connectedWires++;
+            }
+        }
+
+        if(connectedWires == Wires.Count)
+        {
+        
+        if (currentTime >= 5f) // cel putin 5 sec ramase
+        {
+            messageOutMaze = "3 stele";
+            sceneToLoad = "BridgeWin3Case";
+        }
+        else if (currentTime >= 2f)  // intre 2 si 4 sec ramase
+        {
+            messageOutMaze = "2 stele";
+            sceneToLoad = "BridgeWin2Case";
+        }
+        else if (currentTime > 0f) // intre 1 si 2
+        {
+            messageOutMaze = "1 stea";
+            sceneToLoad = "BridgeWin1Case";
+        }
+
+        AudioSource.PlayClipAtPoint(SuccessSound, Camera.main.transform.position);
+        SceneManager.LoadScene(sceneToLoad);
+        finalText.text =  "Number of stars: " + messageOutMaze; //"Time: " + (int)System.Math.Floor(startingTime - currentTime) + " seconds" + "\n" +
+
+        }
+
+        //try to make a logic with interval points/stars
+        
+        if(currentTime <= 0) // 0 sau mai putin
+        {
+            SceneManager.LoadScene("BridgeLoseCase");
+        }
+        
+    }
+
+}
