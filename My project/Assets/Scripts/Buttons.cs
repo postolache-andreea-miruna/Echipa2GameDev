@@ -17,7 +17,10 @@ public class Buttons : MonoBehaviour
     {
         SceneManager.LoadScene("MainGame");
     }
-
+    public void GoToLeaderBoard()
+    {
+        SceneManager.LoadScene("LeaderBoard");
+    }
     public void GoToMainMenu()
     {
         SceneManager.LoadScene("MainMenu");

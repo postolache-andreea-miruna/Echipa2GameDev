@@ -128,5 +128,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_scenes/StrawberryScenes/VideoScene.unity
     guid: 48e9146e0d0cce74686148221f63f0ae
+  - enabled: 1
+    path: Assets/_scenes/StrawberryScenes/LeaderBoard.unity
+    guid: c52f612d7953837478fc512a98874216
   m_configObjects: {}
-  m_UseUCBPForAssetBundles: 0
