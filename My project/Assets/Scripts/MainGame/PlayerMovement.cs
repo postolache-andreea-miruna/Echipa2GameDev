@@ -135,6 +135,7 @@ public class PlayerMovement : MonoBehaviour
                 SceneManager.LoadScene("BonusScene");
             else if(strawberry > 49)
                 SceneManager.LoadScene("VideoScene");
+            
         }
         else if (collision.gameObject.CompareTag("Water"))
         {
