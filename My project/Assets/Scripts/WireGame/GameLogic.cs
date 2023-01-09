@@ -18,7 +18,7 @@ public class GameLogic : MonoBehaviour
     float currentTime= 0f;
     float startingTime = 10f;
     private string sceneToLoad = "";
-
+    private int numberOfStars;
     void ShuffleWires()
     {
         List<Vector3> endWirePositions = new List<Vector3>();
@@ -40,7 +40,7 @@ public class GameLogic : MonoBehaviour
     {
         ShuffleWires();
         currentTime = startingTime;
-
+        numberOfStars = PlayerPrefs.GetInt("Stars", 0);
     }
 
     void Update()
@@ -61,25 +61,28 @@ public class GameLogic : MonoBehaviour
         if(connectedWires == Wires.Count)
         {
         
-        if (currentTime >= 5f) // cel putin 5 sec ramase
-        {
-            messageOutMaze = "3 stele";
-            sceneToLoad = "BridgeWin3Case";
-        }
-        else if (currentTime >= 2f)  // intre 2 si 4 sec ramase
-        {
-            messageOutMaze = "2 stele";
-            sceneToLoad = "BridgeWin2Case";
-        }
-        else if (currentTime > 0f) // intre 1 si 2
-        {
-            messageOutMaze = "1 stea";
-            sceneToLoad = "BridgeWin1Case";
-        }
-
-        AudioSource.PlayClipAtPoint(SuccessSound, Camera.main.transform.position);
-        SceneManager.LoadScene(sceneToLoad);
-        finalText.text =  "Number of stars: " + messageOutMaze; //"Time: " + (int)System.Math.Floor(startingTime - currentTime) + " seconds" + "\n" +
+            if (currentTime >= 5f) // cel putin 5 sec ramase
+            {
+                messageOutMaze = "3 stele";
+                sceneToLoad = "BridgeWin3Case";
+                numberOfStars += 3;
+            }
+            else if (currentTime >= 2f)  // intre 2 si 4 sec ramase
+            {
+                messageOutMaze = "2 stele";
+                sceneToLoad = "BridgeWin2Case";
+                    numberOfStars += 2;
+            }
+            else if (currentTime > 0f) // intre 1 si 2
+            {
+                messageOutMaze = "1 stea";
+                sceneToLoad = "BridgeWin1Case";
+                numberOfStars += 1;
+            }
+            PlayerPrefs.SetInt("Stars", numberOfStars);
+            AudioSource.PlayClipAtPoint(SuccessSound, Camera.main.transform.position);
+            SceneManager.LoadScene(sceneToLoad);
+            finalText.text =  "Number of stars: " + messageOutMaze; //"Time: " + (int)System.Math.Floor(startingTime - currentTime) + " seconds" + "\n" +
 
         }
 
