@@ -25,6 +25,10 @@ public class Buttons : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu");
     }
+    public void GoToLeaderBoard()
+    {
+        SceneManager.LoadScene("LeaderBoard");
+    }
 
     public void RestartGameMaze()
     {
