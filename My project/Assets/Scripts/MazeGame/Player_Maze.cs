@@ -14,17 +14,17 @@ public class Player_Maze : MonoBehaviour
 
     [SerializeField]
     private Text finalStarText;
-
+    private int numberOfStars;
     // Start is called before the first frame update
     void Start()
     {
-        
+        numberOfStars = PlayerPrefs.GetInt("Stars", 0);
     }
 
     // Update is called once per frame
     void Update()
     {
-    
+        
         if (Input.GetKey(KeyCode.W))
         {
             transform.position += Vector3.up * speed * Time.deltaTime;
@@ -54,16 +54,22 @@ public class Player_Maze : MonoBehaviour
         {
             messageOutMaze = "3 stele";
             sceneToLoad = "MazeWin3Game";
+            numberOfStars += 3;
+            PlayerPrefs.SetInt("Stars", numberOfStars);
         }
         else if (pointsAsInt < 60)
         {
             messageOutMaze = "2 stele";
             sceneToLoad = "MazeWin2Game";
+            numberOfStars += 2;
+            PlayerPrefs.SetInt("Stars", numberOfStars);
         }
         else if (pointsAsInt < 65)
         {
             messageOutMaze = "1 stea";
             sceneToLoad = "MazeWin1Game";
+            numberOfStars += 1;
+            PlayerPrefs.SetInt("Stars", numberOfStars);
         }
         else
         {

@@ -44,10 +44,11 @@ public class FishingMiniGame : MonoBehaviour
 
     private string messageOutMaze = "";
     private string sceneToLoad = "";
-
+    int numberOfStars;
     void Start()
     {
         currentTime = startingTime;
+        numberOfStars = PlayerPrefs.GetInt("Stars", 0);
     }
 
     private void FixedUpdate()
@@ -98,7 +99,8 @@ public class FishingMiniGame : MonoBehaviour
 
         float min = hookPosition - hookSize / 2;
         float max = hookPosition + hookSize / 2;
-        if(min<fishPosition && fishPosition<max)
+        
+        if (min<fishPosition && fishPosition<max)
         {
             catchProgress += hookPower * Time.deltaTime;
             if (catchProgress >= 1 && currentTime < 27f)
@@ -107,18 +109,21 @@ public class FishingMiniGame : MonoBehaviour
                 {
                     messageOutMaze = "3 stele";
                     sceneToLoad = "FishingWin3Case";
+                    numberOfStars += 3;
                 }
                 else if (currentTime >= 2f)  // intre 2 si 4 sec ramase
                 {
                     messageOutMaze = "2 stele";
                     sceneToLoad = "FishingWin2Case";
+                    numberOfStars += 2;
                 }
                 else if (currentTime > 0f) // intre 1 si 2
                 {
                     messageOutMaze = "1 stea";
                     sceneToLoad = "FishingWin1Case";
+                    numberOfStars += 1;
                 }
-
+                PlayerPrefs.SetInt("Stars", numberOfStars);
                 SceneManager.LoadScene(sceneToLoad);
                 finalText.text = "Number of stars: " + messageOutMaze; //"Time: " + (int)System.Math.Floor(startingTime - currentTime) + " seconds";
             }

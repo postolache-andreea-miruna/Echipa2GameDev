@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
     private int initialState = 0;
     private string messageOutMaze = "";
     private string sceneToLoad = "";
-
+    private int numberOfStars;
     // game with 4 x 4 pieces.
     private void CreateGamePieces(float gapThickness)
     {
@@ -69,6 +69,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        numberOfStars = PlayerPrefs.GetInt("Stars", 0);
         pieces = new List<Transform>();
         size = 4;
         CreateGamePieces(0.01f);
@@ -96,23 +97,29 @@ public class GameManager : MonoBehaviour
             remainTime = 360 - time;
             Debug.Log(remainTime);
 
+            
+
                 if (remainTime >= 100) // cel putin 5 sec ramase
                 {
                     messageOutMaze = "3 stele";
                     sceneToLoad = "RiverWin3Game";
+                    numberOfStars += 3;
                 }
                 else if (remainTime >= 21)  // intre 2 si 4 sec ramase
                 {
                     messageOutMaze = "2 stele";
                     sceneToLoad = "RiverWin2Game";
-                }
+                numberOfStars += 2;
+            }
                 else if (remainTime > 20) // intre 1 si 2
                 {
                     messageOutMaze = "1 stea";
                     sceneToLoad = "RiverWin1Game";
-                }
+                numberOfStars += 1;
+            }
 
             finalTimeText.text = "Number of stars: " + messageOutMaze; //"Time: " + remainTime;
+            PlayerPrefs.SetInt("Stars", numberOfStars);
             SceneManager.LoadScene(sceneToLoad);
         }
         if (time == 0)
