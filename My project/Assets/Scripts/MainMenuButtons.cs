@@ -16,6 +16,7 @@ public class MainMenuButtons : MonoBehaviour
     [SerializeField]
     public GameObject input;
     private string name;
+    TMP_InputField text;
     private void Start()
     {
         indications = GameObject.Find("indications");
@@ -48,7 +49,11 @@ public class MainMenuButtons : MonoBehaviour
     public void ReadStringInput(string s)
     {
         name = s;
-        PlayerPrefs.SetString("name", name);
+        /*
+        if (text != null)
+            name = text.text;
+        */
+        PlayerPrefs.SetString("Name", name);
         SceneManager.LoadScene("MainGame");
     }
 }
