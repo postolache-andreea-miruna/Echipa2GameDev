@@ -15,6 +15,9 @@ public class Player_Maze : MonoBehaviour
     [SerializeField]
     private Text finalStarText;
     private int numberOfStars;
+
+    private bool isOk = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,26 +53,55 @@ public class Player_Maze : MonoBehaviour
 
         //try to make a logic with interval points/stars
         int pointsAsInt = (int)Points;
+        /*        if (pointsAsInt < 54)
+                {
+                    messageOutMaze = "3 stele";
+                    sceneToLoad = "MazeWin3Game";
+                    if (isOk == false)
+                    {
+                        numberOfStars += 3;
+                        PlayerPrefs.SetInt("Stars", numberOfStars);
+                        isOk = true;
+                    }
+                }
+                else if (pointsAsInt < 60)
+                {
+                    messageOutMaze = "2 stele";
+                    sceneToLoad = "MazeWin2Game";
+                    if (isOk == false)
+                    {
+                        numberOfStars += 2;
+                        PlayerPrefs.SetInt("Stars", numberOfStars);
+                        isOk = true;
+                    }
+                }
+                else if (pointsAsInt < 65)
+                {
+                    messageOutMaze = "1 stea";
+                    sceneToLoad = "MazeWin1Game";
+                    if (isOk == false)
+                    {
+                        numberOfStars += 1;
+                        PlayerPrefs.SetInt("Stars", numberOfStars);
+                        isOk = true;
+                    }
+                }
+                else
+                {
+                    int coinMustHave = pointsAsInt - 65;
+                    messageOutMaze = "tb sa reiei jocul daca nu ai capsune suficiente" + coinMustHave;
+                }*/
         if (pointsAsInt < 54)
         {
             messageOutMaze = "3 stele";
-            sceneToLoad = "MazeWin3Game";
-            numberOfStars += 3;
-            PlayerPrefs.SetInt("Stars", numberOfStars);
         }
         else if (pointsAsInt < 60)
         {
             messageOutMaze = "2 stele";
-            sceneToLoad = "MazeWin2Game";
-            numberOfStars += 2;
-            PlayerPrefs.SetInt("Stars", numberOfStars);
         }
         else if (pointsAsInt < 65)
         {
             messageOutMaze = "1 stea";
-            sceneToLoad = "MazeWin1Game";
-            numberOfStars += 1;
-            PlayerPrefs.SetInt("Stars", numberOfStars);
         }
         else
         {
@@ -94,6 +126,23 @@ public class Player_Maze : MonoBehaviour
                 }
                 else
                 {
+                    if (pointsAsInt < 54)
+                    {
+                        numberOfStars += 3;
+                        sceneToLoad = "MazeWin3Game";
+                    }
+                    else if (pointsAsInt < 60)
+                    {
+                        numberOfStars += 2;
+                        sceneToLoad = "MazeWin2Game";
+                    }
+                    else
+                    {
+                        numberOfStars += 1;
+                        sceneToLoad = "MazeWin1Game";
+                    }
+
+                    PlayerPrefs.SetInt("Stars", numberOfStars);
                     //win
                     SceneManager.LoadScene(sceneToLoad);
                     finalStarText.text = "Number of stars: " + messageOutMaze;
