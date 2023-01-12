@@ -35,12 +35,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void Start()
     {
-        /*Testing
-         * 
-         * 
-         */
-        PlayerPrefs.SetString("Name", "Marius");
-        PlayerPrefs.SetInt("Stars", 534);
+
         playerPosData2 = FindObjectOfType<PlayerPosSaved>();
         _rigidBody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();

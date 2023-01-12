@@ -21,8 +21,10 @@ public class EndingLeaderboard : MonoBehaviour
     }
     private void Start()
     {
-        score = stars / time;
-        
+        score = 100 * ((float)stars / time);
+        Debug.Log(score);
+        Debug.Log(stars);
+        Debug.Log(time);
         int i = 1;
         for (i = 1; i <= 10; i++)
         {
