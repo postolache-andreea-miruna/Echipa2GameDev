@@ -15,7 +15,6 @@ public class Player_Maze : MonoBehaviour
     [SerializeField]
     private Text finalStarText;
     private int numberOfStars;
-    private bool addedStars = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -55,34 +54,22 @@ public class Player_Maze : MonoBehaviour
         {
             messageOutMaze = "3 stele";
             sceneToLoad = "MazeWin3Game";
-            if (addedStars == false)
-            {
-                numberOfStars += 3;
-                PlayerPrefs.SetInt("Stars", numberOfStars);
-                addedStars = true;
-            }
+            numberOfStars += 3;
+            PlayerPrefs.SetInt("Stars", numberOfStars);
         }
         else if (pointsAsInt < 60)
         {
             messageOutMaze = "2 stele";
             sceneToLoad = "MazeWin2Game";
-            if (addedStars == false)
-            {
-                numberOfStars += 2;
-                PlayerPrefs.SetInt("Stars", numberOfStars);
-                addedStars = true;
-            }
+            numberOfStars += 2;
+            PlayerPrefs.SetInt("Stars", numberOfStars);
         }
         else if (pointsAsInt < 65)
         {
             messageOutMaze = "1 stea";
             sceneToLoad = "MazeWin1Game";
-            if (addedStars == false)
-            {
-                numberOfStars += 1;
-                PlayerPrefs.SetInt("Stars", numberOfStars);
-                addedStars = true;
-            }
+            numberOfStars += 1;
+            PlayerPrefs.SetInt("Stars", numberOfStars);
         }
         else
         {
@@ -92,6 +79,7 @@ public class Player_Maze : MonoBehaviour
 
         float posX = playerMaze.transform.position.x;
         float posY = playerMaze.transform.position.y;
+        Debug.Log(posX);
         if (posX > 5.88 && posX < 5.89)
         //if (posX == 5.884998 && posY < -4)
         {

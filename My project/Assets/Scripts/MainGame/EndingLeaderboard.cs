@@ -21,7 +21,7 @@ public class EndingLeaderboard : MonoBehaviour
     }
     private void Start()
     {
-        score = 100 * stars / time;
+        score = stars / time;
         
         int i = 1;
         for (i = 1; i <= 10; i++)

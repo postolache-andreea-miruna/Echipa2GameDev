@@ -39,9 +39,8 @@ public class PlayerMovement : MonoBehaviour
          * 
          * 
          */
-        // PlayerPrefs.SetString("Name", "Marius");
-        // PlayerPrefs.SetInt("Stars", 534);
-        Debug.Log(PlayerPrefs.GetString("Name", "none"));
+        PlayerPrefs.SetString("Name", "Marius");
+        PlayerPrefs.SetInt("Stars", 534);
         playerPosData2 = FindObjectOfType<PlayerPosSaved>();
         _rigidBody = GetComponent<Rigidbody2D>();
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -51,7 +50,6 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        Debug.Log(PlayerPrefs.GetInt("Stars", 0));
         directionX = Input.GetAxisRaw("Horizontal");
         _rigidBody.velocity = new Vector2(directionX * moveSpeed, _rigidBody.velocity.y);
 
