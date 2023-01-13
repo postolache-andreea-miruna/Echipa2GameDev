@@ -53,44 +53,7 @@ public class Player_Maze : MonoBehaviour
 
         //try to make a logic with interval points/stars
         int pointsAsInt = (int)Points;
-        /*        if (pointsAsInt < 54)
-                {
-                    messageOutMaze = "3 stele";
-                    sceneToLoad = "MazeWin3Game";
-                    if (isOk == false)
-                    {
-                        numberOfStars += 3;
-                        PlayerPrefs.SetInt("Stars", numberOfStars);
-                        isOk = true;
-                    }
-                }
-                else if (pointsAsInt < 60)
-                {
-                    messageOutMaze = "2 stele";
-                    sceneToLoad = "MazeWin2Game";
-                    if (isOk == false)
-                    {
-                        numberOfStars += 2;
-                        PlayerPrefs.SetInt("Stars", numberOfStars);
-                        isOk = true;
-                    }
-                }
-                else if (pointsAsInt < 65)
-                {
-                    messageOutMaze = "1 stea";
-                    sceneToLoad = "MazeWin1Game";
-                    if (isOk == false)
-                    {
-                        numberOfStars += 1;
-                        PlayerPrefs.SetInt("Stars", numberOfStars);
-                        isOk = true;
-                    }
-                }
-                else
-                {
-                    int coinMustHave = pointsAsInt - 65;
-                    messageOutMaze = "tb sa reiei jocul daca nu ai capsune suficiente" + coinMustHave;
-                }*/
+       
         if (pointsAsInt < 54)
         {
             messageOutMaze = "3 stele";
