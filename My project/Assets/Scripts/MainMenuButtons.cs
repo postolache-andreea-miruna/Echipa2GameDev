@@ -32,7 +32,7 @@ public class MainMenuButtons : MonoBehaviour
         PlayerPrefs.DeleteKey("Coins");
         PlayerPrefs.DeleteKey("Stars");
         PlayerPrefs.DeleteKey("Time");
-        //
+        // pentru reinitializare
         /*PlayerPrefs.DeleteKey("Name1");
         PlayerPrefs.DeleteKey("Name2");
         PlayerPrefs.DeleteKey("Name3");
