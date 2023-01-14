@@ -3,12 +3,17 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEditor;
-
+using UnityEngine.UI;
+using static System.Net.Mime.MediaTypeNames;
+using Text = UnityEngine.UI.Text;
+using EasyUI.Popup;
 public class Buttons : MonoBehaviour
 {
 
     //public CollectItems stro;
     private int strawberry;
+    
+
     public void PlayGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
@@ -50,13 +55,16 @@ public class Buttons : MonoBehaviour
         // Debug.Log(strawberry);
         if (strawberry >= 17)
         {
+            
             strawberry -= 17;
             SceneManager.LoadScene("BridgeWinGame");
             PlayerPrefs.SetInt("Coins", strawberry);
         }
         else
         {
-            bool popup = EditorUtility.DisplayDialog("Message", "Not enough strawberries", "OK");
+            Popup.Show("Message", "Not enough strawberries");
+            // bool popup = EditorUtility.DisplayDialog("Message", "Not enough strawberries", "OK");
+
         }
     }
 
@@ -72,7 +80,8 @@ public class Buttons : MonoBehaviour
         }
         else
         {
-            bool popup = EditorUtility.DisplayDialog("Message", "Not enough strawberries", "OK");
+            Popup.Show("Message", "Not enough strawberries");
+            // bool popup = EditorUtility.DisplayDialog("Message", "Not enough strawberries", "OK");
         }
     }
     public void StrawberryBoat()
@@ -87,7 +96,8 @@ public class Buttons : MonoBehaviour
         }
         else
         {
-            bool popup = EditorUtility.DisplayDialog("Message", "Not enough strawberries", "OK");
+            Popup.Show("Message", "Not enough strawberries");
+            // bool popup = EditorUtility.DisplayDialog("Message", "Not enough strawberries", "OK");
         }
     }
 
@@ -103,7 +113,8 @@ public class Buttons : MonoBehaviour
         }
         else
         {
-            bool popup = EditorUtility.DisplayDialog("Message", "Not enough strawberries", "OK");
+            Popup.Show("Message", "Not enough strawberries");
+            //bool popup = EditorUtility.DisplayDialog("Message", "Not enough strawberries", "OK");
         }
     }
 }
