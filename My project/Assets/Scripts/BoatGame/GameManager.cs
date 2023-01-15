@@ -13,12 +13,12 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private Text timeText;
 
-    [SerializeField]
+/*    [SerializeField]
     private Text finalTimeText1;
     [SerializeField]
     private Text finalTimeText2;
     [SerializeField]
-    private Text finalTimeText3;
+    private Text finalTimeText3;*/
 
     private List<Transform> pieces;
     private int emptyLocation;
@@ -108,14 +108,14 @@ public class GameManager : MonoBehaviour
                     messageOutMaze = "3 stele";
                     sceneToLoad = "RiverWin3Game";
                     numberOfStars += 3;
-                    finalTimeText1.text = "Time: " + remainTime; //time 2
+                  //  finalTimeText1.text = "Time: " + remainTime; //time 2
             }
                 else if (remainTime >= 21)  // intre 2 si 4 sec ramase
                 {
                     messageOutMaze = "2 stele";
                     sceneToLoad = "RiverWin2Game";
                     numberOfStars += 2;
-                    finalTimeText2.text = "Time: " + remainTime;//time 3
+                   // finalTimeText2.text = "Time: " + remainTime;//time 3
 
             }
                 else if (remainTime > 20) // intre 1 si 2
@@ -123,7 +123,7 @@ public class GameManager : MonoBehaviour
                     messageOutMaze = "1 stea";
                     sceneToLoad = "RiverWin1Game";
                     numberOfStars += 1;
-                    finalTimeText3.text = "Time: " + remainTime;//time 4
+                   // finalTimeText3.text = "Time: " + remainTime;//time 4
             }
 
             //finalTimeText.text = "Number of stars: " + messageOutMaze; //"Time: " + remainTime;

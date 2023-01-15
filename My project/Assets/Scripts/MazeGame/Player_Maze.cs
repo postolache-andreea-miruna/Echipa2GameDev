@@ -12,8 +12,8 @@ public class Player_Maze : MonoBehaviour
     private string messageOutMaze = "";
     private string sceneToLoad = "";
 
-    [SerializeField]
-    private Text finalStarText;
+    /*[SerializeField]
+    private Text finalStarText;*/
 /*    [SerializeField]
     private Text finalStarText2;
     [SerializeField]
@@ -112,8 +112,8 @@ public class Player_Maze : MonoBehaviour
                     PlayerPrefs.SetInt("Stars", numberOfStars);
                     //win
                     SceneManager.LoadScene(sceneToLoad);
-                    finalStarText.text = "Number of stars: " + messageOutMaze;
-                    Debug.Log(finalStarText.text);
+                    //finalStarText.text = "Number of stars: " + messageOutMaze;
+                    //Debug.Log(finalStarText.text);
                     //SceneManager.LoadScene("MazeWinGame");
                 }
             }
