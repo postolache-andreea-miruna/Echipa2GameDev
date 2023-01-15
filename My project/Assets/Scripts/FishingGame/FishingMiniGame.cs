@@ -38,9 +38,9 @@ public class FishingMiniGame : MonoBehaviour
     float catchProgress;
 
     [SerializeField] Text countdownText;
-    [SerializeField] Text finalText1;
+/*    [SerializeField] Text finalText1;
     [SerializeField] Text finalText2;
-    [SerializeField] Text finalText3;
+    [SerializeField] Text finalText3;*/
     float currentTime = 0f;
     float startingTime = 30f;
 
@@ -112,21 +112,21 @@ public class FishingMiniGame : MonoBehaviour
                     messageOutMaze = "3 stele";
                     sceneToLoad = "FishingWin3Case";
                     numberOfStars += 3;
-                    finalText1.text = "Time: " + (int)System.Math.Floor(startingTime - currentTime) + " seconds"; //in time 1 1
+                    //finalText1.text = "Time: " + (int)System.Math.Floor(startingTime - currentTime) + " seconds"; //in time 1 1
                 }
                 else if (currentTime >= 2f)  // intre 2 si 4 sec ramase
                 {
                     messageOutMaze = "2 stele";
                     sceneToLoad = "FishingWin2Case";
                     numberOfStars += 2; 
-                    finalText2.text = "Time: " + (int)System.Math.Floor(startingTime - currentTime) + " seconds"; //time 1 2
+                    //finalText2.text = "Time: " + (int)System.Math.Floor(startingTime - currentTime) + " seconds"; //time 1 2
                 }
                 else if (currentTime > 0f) // intre 1 si 2
                 {
                     messageOutMaze = "1 stea";
                     sceneToLoad = "FishingWin1Case";
                     numberOfStars += 1;
-                    finalText3.text = "Time: " + (int)System.Math.Floor(startingTime - currentTime) + " seconds";//time 1 3
+                    //finalText3.text = "Time: " + (int)System.Math.Floor(startingTime - currentTime) + " seconds";//time 1 3
                 }
                 PlayerPrefs.SetInt("Stars", numberOfStars);
                 SceneManager.LoadScene(sceneToLoad);

@@ -13,12 +13,12 @@ public class GameLogic : MonoBehaviour
 
     [SerializeField] 
     Text countdownText;
-    [SerializeField]
+/*    [SerializeField]
     Text finalText1;
     [SerializeField]
     Text finalText2;
     [SerializeField]
-    Text finalText3;
+    Text finalText3;*/
     float currentTime= 0f;
     float startingTime = 10f;
     private string sceneToLoad = "";
@@ -69,21 +69,22 @@ public class GameLogic : MonoBehaviour
             {
                 messageOutMaze = "3 stele";
                 sceneToLoad = "BridgeWin3Case";
-                numberOfStars += 3; finalText1.text = "Time: " + (int)System.Math.Floor(startingTime - currentTime) + " seconds";
+                numberOfStars += 3; 
+                //finalText1.text = "Time: " + (int)System.Math.Floor(startingTime - currentTime) + " seconds";
             }
             else if (currentTime >= 2f)  // intre 2 si 4 sec ramase
             {
                 messageOutMaze = "2 stele";
                 sceneToLoad = "BridgeWin2Case";
                     numberOfStars += 2;
-                finalText2.text = "Time: " + (int)System.Math.Floor(startingTime - currentTime) + " seconds";
+               // finalText2.text = "Time: " + (int)System.Math.Floor(startingTime - currentTime) + " seconds";
             }
             else if (currentTime > 0f) // intre 1 si 2
             {
                 messageOutMaze = "1 stea";
                 sceneToLoad = "BridgeWin1Case";
                 numberOfStars += 1;
-                finalText3.text = "Time: " + (int)System.Math.Floor(startingTime - currentTime) + " seconds";
+               // finalText3.text = "Time: " + (int)System.Math.Floor(startingTime - currentTime) + " seconds";
             }
             PlayerPrefs.SetInt("Stars", numberOfStars);
             AudioSource.PlayClipAtPoint(SuccessSound, Camera.main.transform.position);
