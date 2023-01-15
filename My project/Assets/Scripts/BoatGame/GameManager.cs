@@ -103,14 +103,14 @@ public class GameManager : MonoBehaviour
 
             
 
-                if (remainTime >= 100) // cel putin 5 sec ramase
+                if (time >= 200) // cel putin 5 sec ramase
                 {
                     messageOutMaze = "3 stele";
                     sceneToLoad = "RiverWin3Game";
                     numberOfStars += 3;
                   //  finalTimeText1.text = "Time: " + remainTime; //time 2
             }
-                else if (remainTime >= 21)  // intre 2 si 4 sec ramase
+                else if (time >= 50)  // intre 2 si 4 sec ramase
                 {
                     messageOutMaze = "2 stele";
                     sceneToLoad = "RiverWin2Game";
@@ -118,7 +118,7 @@ public class GameManager : MonoBehaviour
                    // finalTimeText2.text = "Time: " + remainTime;//time 3
 
             }
-                else if (remainTime > 20) // intre 1 si 2
+                else if (time > 20) // intre 1 si 2
                 {
                     messageOutMaze = "1 stea";
                     sceneToLoad = "RiverWin1Game";
