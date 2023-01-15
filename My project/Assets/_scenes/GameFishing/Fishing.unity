@@ -418,7 +418,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SendPointerHoverToParent: 1
   m_HorizontalAxis: Horizontal
   m_VerticalAxis: Vertical
   m_SubmitButton: Submit
@@ -816,6 +815,7 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
@@ -998,7 +998,9 @@ MonoBehaviour:
   hookPower: 0.5
   progressBarDecay: 0.1
   countdownText: {fileID: 1588131900}
-  finalText: {fileID: 8168758377424527060, guid: a51aac50691ecd849abf8e7e6fd2545f, type: 3}
+  finalText1: {fileID: 789935678138683391, guid: 444dd6a5931c72040a117825b86099bc, type: 3}
+  finalText2: {fileID: 8634735825637289767, guid: 8094b778c82d4df4f8a53f01dfcd235f, type: 3}
+  finalText3: {fileID: 1117620672621980641, guid: d63b58f159999cd419614339ebd327aa, type: 3}
 --- !u!1 &1953422607
 GameObject:
   m_ObjectHideFlags: 0

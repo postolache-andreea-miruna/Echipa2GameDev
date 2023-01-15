@@ -65,8 +65,8 @@ public class MainMenuButtons : MonoBehaviour
 
     public void QuitGame()
     {
-       // Application.Quit(); //when is built
-        UnityEditor.EditorApplication.isPlaying = false; //when no built
+        Application.Quit(); //when is built
+        //UnityEditor.EditorApplication.isPlaying = false; //when no built
     }
     public void ReadStringInput(string s)
     {

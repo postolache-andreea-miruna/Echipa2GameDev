@@ -6395,7 +6395,9 @@ MonoBehaviour:
   - {fileID: 1485651922}
   SuccessSound: {fileID: 8300000, guid: b8dac7df95bdf5b4b8afcfa9e96fb22b, type: 3}
   countdownText: {fileID: 766702282}
-  finalText: {fileID: 5698008976491366047, guid: 65afc5793998a4348bcfda691bfb7ea0, type: 3}
+  finalText1: {fileID: 5206887142399174738, guid: d9916db71292ea1438321f8796eac124, type: 3}
+  finalText2: {fileID: 8481129117963578135, guid: bdfdc85002333bd4f8496143cb707463, type: 3}
+  finalText3: {fileID: 2199381854847772500, guid: 2361f8407bbf1fe4c920a0734a3dc745, type: 3}
 --- !u!4 &1917475039
 Transform:
   m_ObjectHideFlags: 0

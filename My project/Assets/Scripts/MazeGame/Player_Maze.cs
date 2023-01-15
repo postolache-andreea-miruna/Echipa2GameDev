@@ -14,6 +14,10 @@ public class Player_Maze : MonoBehaviour
 
     [SerializeField]
     private Text finalStarText;
+/*    [SerializeField]
+    private Text finalStarText2;
+    [SerializeField]
+    private Text finalStarText3;*/
     private int numberOfStars;
 
     private bool isOk = false;
@@ -75,7 +79,7 @@ public class Player_Maze : MonoBehaviour
         float posX = playerMaze.transform.position.x;
         float posY = playerMaze.transform.position.y;
         Debug.Log(posX);
-        if (posX > 5.88 && posX < 5.89)
+        if (posX > 5.88 && posX < 6)
         //if (posX == 5.884998 && posY < -4)
         {
             if (posY < -4)
